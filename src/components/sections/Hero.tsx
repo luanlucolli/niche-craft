@@ -1,3 +1,4 @@
+
 import Section from '@/components/ui/Section';
 import Heading from '@/components/ui/Heading';
 import { Button } from '@/components/ui/button';
@@ -52,7 +53,7 @@ export default function Hero({
     <Section 
       separator={separator}
       background="primary"
-      paddingY="2xl"
+      paddingY="xl"
     >
       {/* Background gradient and effects */}
       <div className="absolute inset-0 overflow-hidden rounded-3xl">
@@ -76,21 +77,21 @@ export default function Hero({
           variant === 'split' && 'lg:order-1'
         )}>
           {subtitle && (
-            <p className="text-white/80 font-semibold text-lg mb-4">
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 text-white/90 font-semibold text-lg mb-6">
               {subtitle}
-            </p>
+            </div>
           )}
           
           <Heading 
             level={1} 
-            size="2xl" 
+            size="hero" 
             className="text-white mb-6"
           >
             {title}
           </Heading>
           
           {description && (
-            <p className="text-white/90 text-lg leading-relaxed mb-8">
+            <p className="text-white/80 text-lg leading-relaxed mb-8">
               {description}
             </p>
           )}
@@ -115,7 +116,7 @@ export default function Hero({
             {secondaryButton && (
               <Button
                 asChild
-                className="btn-secondary group"
+                className="bg-white/10 border border-white/20 text-white hover:bg-white/20 hover:border-white/30 backdrop-blur-sm group"
               >
                 <a 
                   href={getWhatsAppUrl(secondaryButton)}

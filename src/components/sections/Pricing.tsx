@@ -13,7 +13,8 @@ interface Plan {
   features: string[];
   button: {
     text: string;
-    href: string;
+    href?: string;
+    type?: 'whatsapp' | 'default';
   };
   popular?: boolean;
 }
@@ -204,12 +205,6 @@ export default function Pricing({
             {subtitle}
           </p>
         )}
-        
-        {/* Badge promocional */}
-        <div className="mt-6 inline-flex items-center gap-2 bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-3 rounded-full text-sm font-bold animate-pulse">
-          <Zap className="w-4 h-4" />
-          Oferta limitada - Apenas 10 vagas!
-        </div>
       </div>
       
       <div className={cn(

@@ -132,9 +132,8 @@ export default function CTA({
               )}
               
               <Heading 
-                id="cta-title"
                 level={2} 
-                size="xl" 
+                size="lg" 
                 className={cn(
                   'text-white mb-6',
                   variant === 'centered' && 'text-center',

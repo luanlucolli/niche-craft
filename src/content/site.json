@@ -1,16 +1,46 @@
 
 {
   "name": "Landing Page Pro",
+  "title": "Landing Page Pro",
   "description": "Landing pages focadas em conversão via WhatsApp",
   "url": "https://landingpagepro.com",
+  "language": "pt-BR",
   "contact": {
+    "phone": "+5511999999999",
+    "email": "contato@landingpagepro.com",
     "whatsapp": "5511999999999",
-    "prefill": "Olá! Tenho interesse em uma landing page focada em conversão via WhatsApp."
+    "prefill": "Olá! Tenho interesse em uma landing page focada em conversão via WhatsApp.",
+    "address": {
+      "street": "Rua das Landing Pages, 123",
+      "neighborhood": "Centro",
+      "city": "São Paulo",
+      "state": "SP",
+      "zipCode": "01000-000",
+      "country": "Brasil"
+    }
   },
   "keywords": ["landing page", "whatsapp", "conversão", "design"],
   "author": "Landing Page Pro",
   "social": {
     "instagram": "@landingpagepro",
-    "linkedin": "landing-page-pro"
+    "linkedin": "landing-page-pro",
+    "facebook": "",
+    "twitter": "",
+    "youtube": ""
+  },
+  "analytics": {
+    "googleAnalytics": "",
+    "plausible": {
+      "domain": "",
+      "apiHost": ""
+    }
+  },
+  "forms": {
+    "contactEndpoint": ""
+  },
+  "seo": {
+    "ogImage": "/og-image.png",
+    "favicon": "/favicon.ico",
+    "twitterCard": "summary_large_image"
   }
 }
