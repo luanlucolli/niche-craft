@@ -1,4 +1,3 @@
-
 import Section from '@/components/ui/Section';
 import Heading from '@/components/ui/Heading';
 import { Button } from '@/components/ui/button';
@@ -35,6 +34,16 @@ export default function Pricing({
   plans,
 }: PricingProps) {
   const [hoveredPlan, setHoveredPlan] = useState<number | null>(null);
+
+  const getWhatsAppUrl = (button: any) => {
+    if (button?.type === 'whatsapp') {
+      const siteData = require('@/content/site.json');
+      const whatsappNumber = siteData?.contact?.whatsapp || '5511999999999';
+      const prefillMessage = siteData?.contact?.prefill || 'Olá! Tenho interesse em uma landing page.';
+      return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(prefillMessage)}`;
+    }
+    return button?.href || '#';
+  };
 
   const getPlanIcon = (index: number) => {
     switch (index) {
@@ -151,7 +160,12 @@ export default function Pricing({
               isHovered && 'transform scale-105 shadow-lg'
             )}
           >
-            <a href={plan.button.href} className="relative overflow-hidden">
+            <a 
+              href={getWhatsAppUrl(plan.button)}
+              target={plan.button?.type === 'whatsapp' ? '_blank' : undefined}
+              rel={plan.button?.type === 'whatsapp' ? 'noopener noreferrer' : undefined}
+              className="relative overflow-hidden"
+            >
               <span className="relative z-10 transition-transform duration-300 group-hover/btn:scale-105">
                 {plan.button.text}
               </span>

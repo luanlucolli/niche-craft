@@ -1,49 +1,16 @@
 
 {
-  "title": "LP Starter - Landing Page Profissional",
-  "description": "Starter profissional para criação de landing pages modernas e performáticas",
-  "url": "https://lp-starter.com",
-  "author": "LP Starter",
-  "keywords": ["landing page", "react", "typescript", "tailwind", "starter", "template"],
-  "language": "pt-BR",
-  "theme": {
-    "primaryColor": "221 83% 53%",
-    "secondaryColor": "262 83% 58%",
-    "accentColor": "210 40% 96%"
-  },
+  "name": "Landing Page Pro",
+  "description": "Landing pages focadas em conversão via WhatsApp",
+  "url": "https://landingpagepro.com",
   "contact": {
-    "email": "contato@empresa.com",
-    "phone": "+55 11 99999-9999",
-    "whatsapp": "+5511999999999",
-    "address": {
-      "street": "Rua Example, 123",
-      "neighborhood": "Centro",
-      "city": "São Paulo",
-      "state": "SP",
-      "zipCode": "01000-000",
-      "country": "Brasil"
-    }
+    "whatsapp": "5511999999999",
+    "prefill": "Olá! Tenho interesse em uma landing page focada em conversão via WhatsApp."
   },
+  "keywords": ["landing page", "whatsapp", "conversão", "design"],
+  "author": "Landing Page Pro",
   "social": {
-    "facebook": "https://facebook.com/empresa",
-    "instagram": "https://instagram.com/empresa",
-    "twitter": "https://twitter.com/empresa",
-    "linkedin": "https://linkedin.com/company/empresa",
-    "youtube": "https://youtube.com/@empresa"
-  },
-  "analytics": {
-    "googleAnalytics": "",
-    "plausible": {
-      "domain": "",
-      "apiHost": ""
-    }
-  },
-  "forms": {
-    "contactEndpoint": "https://formspree.io/f/your-form-id"
-  },
-  "seo": {
-    "ogImage": "/og-image.png",
-    "twitterCard": "summary_large_image",
-    "favicon": "/favicon.png"
+    "instagram": "@landingpagepro",
+    "linkedin": "landing-page-pro"
   }
 }

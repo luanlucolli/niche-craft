@@ -1,24 +1,25 @@
-
-import { ArrowRight, Play } from 'lucide-react';
-import Container from '@/components/ui/Container';
+import Section from '@/components/ui/Section';
 import Heading from '@/components/ui/Heading';
 import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface HeroProps {
-  variant?: 'centered' | 'left-aligned' | 'split';
+  variant?: 'centered' | 'split' | 'minimal';
   separator?: 'none' | 'wave' | 'curve' | 'diagonal';
   title: string;
   subtitle?: string;
   description?: string;
   primaryButton?: {
     text: string;
-    href: string;
+    href?: string;
+    type?: 'whatsapp' | 'default';
     variant?: string;
   };
   secondaryButton?: {
     text: string;
-    href: string;
+    href?: string;
+    type?: 'whatsapp' | 'default';
     variant?: string;
   };
   image?: {
@@ -37,111 +38,113 @@ export default function Hero({
   secondaryButton,
   image,
 }: HeroProps) {
-  const renderContent = () => (
-    <div className={cn(
-      'animate-fade-in-up',
-      variant === 'centered' && 'text-center max-w-4xl mx-auto',
-      variant === 'left-aligned' && 'text-left max-w-3xl',
-      variant === 'split' && 'text-left max-w-2xl'
-    )}>
-      {subtitle && (
-        <p className="text-white/90 font-semibold text-lg mb-4 animate-fade-in bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 inline-block">
-          {subtitle}
-        </p>
-      )}
-      
-      <Heading level={1} size="hero" className="mb-6 text-white">
-        {title}
-      </Heading>
-      
-      {description && (
-        <p className="text-white/80 text-lg md:text-xl leading-relaxed mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-          {description}
-        </p>
-      )}
-      
-      {(primaryButton || secondaryButton) && (
-        <div className={cn(
-          'flex flex-col sm:flex-row gap-4 animate-fade-in',
-          variant === 'centered' && 'justify-center',
-          variant !== 'centered' && 'justify-start'
-        )} style={{ animationDelay: '0.4s' }}>
-          {primaryButton && (
-            <Button
-              asChild
-              className="btn-hero group"
-            >
-              <a href={primaryButton.href}>
-                {primaryButton.text}
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </a>
-            </Button>
-          )}
-          
-          {secondaryButton && (
-            <Button
-              asChild
-              className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/30 bg-white/10 backdrop-blur-sm px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:bg-white/20 hover:border-white/50 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent group"
-            >
-              <a href={secondaryButton.href}>
-                <Play className="mr-2 h-5 w-5" />
-                {secondaryButton.text}
-              </a>
-            </Button>
-          )}
-        </div>
-      )}
-    </div>
-  );
-
-  const renderImage = () => {
-    if (!image) return null;
-    
-    return (
-      <div className="animate-scale-in" style={{ animationDelay: '0.6s' }}>
-        <img
-          src={image.src}
-          alt={image.alt}
-          className="rounded-2xl shadow-2xl animate-float"
-          style={{ animationDelay: '1s' }}
-        />
-      </div>
-    );
+  const getWhatsAppUrl = (button: any) => {
+    if (button?.type === 'whatsapp') {
+      const siteData = require('@/content/site.json');
+      const whatsappNumber = siteData?.contact?.whatsapp || '5511999999999';
+      const prefillMessage = siteData?.contact?.prefill || 'Olá! Tenho interesse em uma landing page.';
+      return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(prefillMessage)}`;
+    }
+    return button?.href || '#';
   };
 
   return (
-    <section
-      className={cn(
-        'relative bg-gradient-hero text-white py-section lg:py-32 overflow-hidden',
-        {
-          'separator-wave': separator === 'wave',
-          'separator-curve': separator === 'curve', 
-          'separator-diagonal': separator === 'diagonal',
-        }
-      )}
+    <Section 
+      separator={separator}
+      background="primary"
+      paddingY="2xl"
     >
-      {/* Background decorations */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-600/20 to-secondary-600/20" />
-      <div className="absolute -top-24 -right-24 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
-      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
-      
-      <Container size="wide" className="relative z-10">
-        {variant === 'split' ? (
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div>{renderContent()}</div>
-            {renderImage()}
-          </div>
-        ) : (
-          <div className="space-y-12">
-            {renderContent()}
-            {image && (
-              <div className="flex justify-center">
-                {renderImage()}
-              </div>
+      {/* Background gradient and effects */}
+      <div className="absolute inset-0 overflow-hidden rounded-3xl">
+        <div
+          className="absolute -bottom-1/2 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-[200%] h-[200%] bg-primary-600 opacity-10 rounded-full blur-3xl"
+          style={{ filter: 'blur(200px)' }}
+        />
+        <div
+          className="absolute -top-1/2 left-0 transform translate-x-1/4 -translate-y-1/4 w-[150%] h-[150%] bg-primary-700 opacity-5 rounded-full blur-3xl"
+          style={{ filter: 'blur(150px)' }}
+        />
+      </div>
+
+      <div className={cn(
+        'relative grid gap-12 items-center animate-fade-in-up',
+        variant === 'centered' && 'text-center max-w-4xl mx-auto',
+        variant === 'split' && 'lg:grid-cols-2',
+        variant === 'minimal' && 'text-center max-w-2xl mx-auto'
+      )}>
+        <div className={cn(
+          variant === 'split' && 'lg:order-1'
+        )}>
+          {subtitle && (
+            <p className="text-white/80 font-semibold text-lg mb-4">
+              {subtitle}
+            </p>
+          )}
+          
+          <Heading 
+            level={1} 
+            size="2xl" 
+            className="text-white mb-6"
+          >
+            {title}
+          </Heading>
+          
+          {description && (
+            <p className="text-white/90 text-lg leading-relaxed mb-8">
+              {description}
+            </p>
+          )}
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            {primaryButton && (
+              <Button
+                asChild
+                className="btn-hero group"
+              >
+                <a 
+                  href={getWhatsAppUrl(primaryButton)}
+                  target={primaryButton?.type === 'whatsapp' ? '_blank' : undefined}
+                  rel={primaryButton?.type === 'whatsapp' ? 'noopener noreferrer' : undefined}
+                >
+                  {primaryButton.text}
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </a>
+              </Button>
+            )}
+            
+            {secondaryButton && (
+              <Button
+                asChild
+                className="btn-secondary group"
+              >
+                <a 
+                  href={getWhatsAppUrl(secondaryButton)}
+                  target={secondaryButton?.type === 'whatsapp' ? '_blank' : undefined}
+                  rel={secondaryButton?.type === 'whatsapp' ? 'noopener noreferrer' : undefined}
+                >
+                  {secondaryButton.text}
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </a>
+              </Button>
             )}
           </div>
+        </div>
+
+        {image && (
+          <div className={cn(
+            'relative overflow-hidden rounded-3xl shadow-xl animate-fade-in',
+            variant === 'split' && 'lg:order-2',
+            variant === 'centered' && 'max-w-lg mx-auto',
+            variant === 'minimal' && 'max-w-sm mx-auto'
+          )}>
+            <img 
+              src={image.src} 
+              alt={image.alt} 
+              className="object-cover w-full h-full" 
+            />
+          </div>
         )}
-      </Container>
-    </section>
+      </div>
+    </Section>
   );
 }

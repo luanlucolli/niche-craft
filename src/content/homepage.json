@@ -6,22 +6,22 @@
       "variant": "centered",
       "separator": "curve",
       "props": {
-        "title": "Transforme Sua Ideia em uma Landing Page Profissional em Apenas 24 Horas",
-        "subtitle": "🚀 Serviço Completo de Criação",
-        "description": "Criamos landing pages de alta conversão que vendem mais. Design profissional, otimizado para mobile e com foco total em resultados para o seu negócio.",
+        "title": "Landing pages focadas em conversão via WhatsApp",
+        "subtitle": "Entrega enxuta e bem-feita",
+        "description": "Páginas leves, responsivas e com SEO on-page, feitas para gerar contato imediato no WhatsApp. Prazos realistas para um trabalho sólido.",
         "primaryButton": {
-          "text": "Quero Minha Landing Page",
-          "href": "#pricing",
+          "text": "Falar no WhatsApp",
+          "type": "whatsapp",
           "variant": "hero"
         },
         "secondaryButton": {
-          "text": "Ver Portfólio",
-          "href": "#portfolio",
+          "text": "Ver casos e estrutura",
+          "href": "#cases",
           "variant": "secondary"
         },
         "image": {
           "src": "/hero-image.png",
-          "alt": "Landing Page Profissional"
+          "alt": "Exemplo de landing page"
         }
       }
     },
@@ -30,38 +30,38 @@
       "variant": "grid",
       "separator": "none",
       "props": {
-        "title": "Por Que Escolher Nosso Serviço?",
-        "subtitle": "Entregamos muito mais que apenas uma página bonita",
+        "title": "O que você recebe de verdade",
+        "subtitle": "Sem promessas mágicas, com processo claro",
         "features": [
           {
-            "icon": "Clock",
-            "title": "Entrega Rápida",
-            "description": "Sua landing page fica pronta em até 24 horas. Sem enrolação, sem demora."
-          },
-          {
             "icon": "Target",
-            "title": "Foco em Conversão",
-            "description": "Cada elemento é pensado para converter visitantes em clientes reais."
+            "title": "WhatsApp em destaque",
+            "description": "CTA principal com mensagem pré-preenchida e tracking de clique."
           },
           {
             "icon": "Smartphone",
-            "title": "100% Responsivo",
-            "description": "Funciona perfeitamente em celular, tablet e desktop. Seus clientes acessam de qualquer lugar."
+            "title": "Responsivo de verdade",
+            "description": "Mobile-first, acessível e rápido em 3G/4G."
           },
           {
             "icon": "Search",
-            "title": "Otimizado para Google",
-            "description": "SEO técnico implementado para sua página aparecer nos primeiros resultados."
+            "title": "SEO on-page",
+            "description": "Metatags, OG/Twitter, sitemap/robots e cópia clara. Sem prometer ranking."
+          },
+          {
+            "icon": "Zap",
+            "title": "Publicação e HTTPS",
+            "description": "Deploy em CDN (Vercel/Netlify) na sua conta, com domínio e DNS orientados."
           },
           {
             "icon": "BarChart3",
-            "title": "Analytics Integrado",
-            "description": "Acompanhe visitas, conversões e resultados em tempo real."
+            "title": "Métricas opcionais",
+            "description": "Integração com Plausible/GA4 quando desejado, sem scripts pesados."
           },
           {
             "icon": "Shield",
-            "title": "Hospedagem Segura",
-            "description": "Hospedagem premium inclusa por 1 ano. Rápida, segura e confiável."
+            "title": "Boas práticas",
+            "description": "Acessibilidade, Lighthouse equilibrado e código organizado para evoluir."
           }
         ]
       }
@@ -71,25 +71,25 @@
       "variant": "alternating",
       "separator": "diagonal",
       "props": {
-        "title": "O Que Está Incluído",
-        "subtitle": "Tudo que você precisa para vender online",
+        "title": "Pacote enxuto, pensado para negócio local",
+        "subtitle": "Contato rápido agora e base pronta para crescer depois",
         "services": [
           {
-            "title": "Design Profissional Personalizado",
-            "description": "Criamos um design único para o seu negócio, alinhado com sua marca e que transmite credibilidade instantânea.",
-            "features": ["Logo e identidade visual", "Cores da sua marca", "Imagens profissionais", "Copywriting persuasivo"],
+            "title": "Design profissional",
+            "description": "Layout limpo, hierarquia clara e variações de seções reutilizáveis.",
+            "features": ["Identidade aplicada", "Componentes reutilizáveis", "Sessões com separadores orgânicos", "Cópia orientada à ação"],
             "image": "/service-design.png"
           },
           {
-            "title": "Formulários que Convertem",
-            "description": "Formulários estratégicos que capturam leads qualificados e transformam visitantes em oportunidades reais de negócio.",
-            "features": ["Integração com WhatsApp", "Captura de leads automática", "Notificações em tempo real", "CRM integrado"],
+            "title": "WhatsApp-first (formulário opcional)",
+            "description": "O contato direto converte mais. Mantemos formulário simples como plano B.",
+            "features": ["CTA principal em WhatsApp", "Mensagem predefinida", "Formulário via serviço externo (opcional)", "Feedback de envio acessível"],
             "image": "/service-forms.png"
           },
           {
-            "title": "Performance e Velocidade",
-            "description": "Sua landing page carrega em menos de 2 segundos, garantindo que você não perca nenhum cliente por lentidão.",
-            "features": ["Carregamento ultra-rápido", "Otimização de imagens", "CDN global", "Score 95+ no Google"],
+            "title": "Performance e SEO on-page",
+            "description": "Imagens otimizadas, carga eficiente e metatags corretas.",
+            "features": ["Lazy-load de imagens", "Metatags OG/Twitter", "Sitemap/robots", "Sem bibliotecas pesadas desnecessárias"],
             "image": "/service-performance.png"
           }
         ]
@@ -100,68 +100,60 @@
       "variant": "centered",
       "separator": "wave",
       "props": {
-        "title": "Investimento que Se Paga",
-        "subtitle": "Escolha o plano ideal para o seu negócio crescer",
+        "title": "Planos claros",
+        "subtitle": "Prazos contam após receber conteúdo e sinal",
         "plans": [
           {
-            "name": "Landing Page Simples",
-            "price": "497",
+            "name": "Essencial",
+            "price": "a partir de 990",
             "period": "única",
-            "description": "Perfeita para validar sua ideia ou pequenos negócios",
+            "description": "Para sair do zero com qualidade",
             "features": [
-              "Design profissional responsivo",
-              "Até 3 seções personalizadas",
-              "Formulário de contato integrado",
-              "SEO básico otimizado",
-              "Hospedagem por 6 meses",
-              "Suporte por 30 dias"
+              "Até 5 seções",
+              "CTA WhatsApp principal",
+              "SEO on-page básico",
+              "Publicação em CDN (Vercel/Netlify)",
+              "2 rodadas de revisão",
+              "Suporte inicial por 30 dias"
             ],
             "button": {
-              "text": "Começar Agora",
-              "href": "#contato"
+              "text": "Começar pelo Essencial",
+              "type": "whatsapp"
             },
             "popular": false
           },
           {
-            "name": "Landing Page Premium",
-            "price": "997",
+            "name": "Profissional",
+            "price": "a partir de 1.790",
             "period": "única",
-            "description": "Para empresas que querem maximizar conversões",
+            "description": "Mais seções e variações visuais",
             "features": [
-              "Tudo do plano Simples",
-              "Até 6 seções customizadas",
-              "Integração com WhatsApp Business",
-              "Google Analytics configurado",
-              "Pixel do Facebook integrado",
-              "2 revisões incluídas",
-              "Hospedagem por 1 ano",
-              "Suporte por 90 dias"
+              "Até 8 seções",
+              "Variações de layout (separadores orgânicos)",
+              "Conteúdo refinado",
+              "Integração opcional: Plausible/GA4/Pixel",
+              "2 rodadas de revisão",
+              "Suporte inicial por 60 dias"
             ],
             "button": {
-              "text": "Escolher Premium",
-              "href": "#contato"
+              "text": "Subir para o Profissional",
+              "type": "whatsapp"
             },
             "popular": true
           },
           {
-            "name": "Landing Page Pro",
-            "price": "1.497",
-            "period": "única",
-            "description": "Solução completa para máximos resultados",
+            "name": "Manutenção (opcional)",
+            "price": "149",
+            "period": "mês",
+            "description": "Pequenas mudanças e relatórios leves",
             "features": [
-              "Tudo do plano Premium",
-              "Design 100% personalizado",
-              "Copywriting profissional",
-              "A/B Testing configurado",
-              "Integração com CRM",
-              "Chat online integrado",
-              "Revisões ilimitadas",
-              "Hospedagem por 2 anos",
-              "Suporte prioritário"
+              "Ajustes em conteúdo/CTA",
+              "Relatório simples de métricas",
+              "Até 1h de alterações/mês"
             ],
             "button": {
-              "text": "Quero o Melhor",
-              "href": "#contato"
+              "text": "Quero manter atualizado",
+              "type": "whatsapp"
             },
             "popular": false
           }
@@ -173,30 +165,30 @@
       "variant": "carousel",
       "separator": "none",
       "props": {
-        "title": "Nossos Clientes Vendem Mais",
-        "subtitle": "Veja os resultados reais de quem investiu em uma landing page profissional",
+        "title": "O que clientes valorizam",
+        "subtitle": "Feedback real sobre processo e resultado",
         "testimonials": [
           {
-            "content": "Em 30 dias após lançar a landing page, nossas vendas aumentaram 250%. O investimento se pagou na primeira semana!",
-            "author": "Carlos Mendes",
-            "role": "CEO",
-            "company": "TechSolutions",
-            "avatar": "/testimonial-1.jpg",
-            "rating": 5
-          },
-          {
-            "content": "A qualidade é impressionante. Nossa taxa de conversão subiu de 2% para 15%. Já recomendei para todos os meus parceiros.",
+            "content": "Publicação rápida e comunicação direta no WhatsApp. O site ficou leve e fácil de navegar.",
             "author": "Marina Santos",
-            "role": "Diretora de Marketing",
-            "company": "GrowthCorp",
+            "role": "Empreendedora",
+            "company": "Studio Local",
             "avatar": "/testimonial-2.jpg",
             "rating": 5
           },
           {
-            "content": "Entrega rápida, design incrível e suporte excepcional. Em 24h nossa landing page estava no ar vendendo. Simplesmente perfeito!",
+            "content": "Gostei da clareza do processo e das duas rodadas de revisão. Ficou exatamente o que eu precisava.",
+            "author": "Carlos Mendes",
+            "role": "Consultor",
+            "company": "CM Consultoria",
+            "avatar": "/testimonial-1.jpg",
+            "rating": 5
+          },
+          {
+            "content": "A orientação para domínio e publicação ajudou muito. Agora o cliente acha a gente no Google com facilidade.",
             "author": "Roberto Silva",
-            "role": "Empreendedor",
-            "company": "StartupBrasil",
+            "role": "Sócio",
+            "company": "RS Serviços",
             "avatar": "/testimonial-3.jpg",
             "rating": 5
           }
@@ -208,32 +200,28 @@
       "variant": "accordion",
       "separator": "curve",
       "props": {
-        "title": "Dúvidas Frequentes",
-        "subtitle": "Tudo que você precisa saber antes de começar",
+        "title": "Perguntas frequentes",
+        "subtitle": "Transparência antes de começar",
         "faqs": [
           {
-            "question": "Em quanto tempo minha landing page fica pronta?",
-            "answer": "O prazo padrão é de 24 a 48 horas úteis após aprovação do briefing e pagamento. Para projetos mais complexos (plano Pro), pode levar até 5 dias úteis."
+            "question": "Qual é o prazo de entrega?",
+            "answer": "Essencial: 10–14 dias úteis. Profissional: 14–21 dias úteis. O prazo passa a contar após recebermos conteúdo e pagamento inicial."
           },
           {
-            "question": "Preciso fornecer as imagens e textos?",
-            "answer": "Não necessariamente. Temos banco de imagens profissionais e redatores especializados. Mas se você já tem materiais da sua marca, podemos usar sem problemas."
+            "question": "Vocês hospedam o site?",
+            "answer": "Publicamos em CDN (Vercel/Netlify) na sua conta, com HTTPS. Ajudamos a configurar domínio e DNS."
           },
           {
-            "question": "A hospedagem está incluída?",
-            "answer": "Sim! Todos os planos incluem hospedagem premium por pelo menos 6 meses. Após esse período, você pode renovar conosco ou transferir para onde quiser."
+            "question": "Quantas revisões estão incluídas?",
+            "answer": "Até 2 rodadas de revisão por projeto. Mudanças adicionais são cobradas à parte."
           },
           {
-            "question": "Posso fazer alterações depois de pronta?",
-            "answer": "Claro! Cada plano inclui um número específico de revisões. Após esgotar as revisões incluídas, cobramos R$ 97 por alteração."
+            "question": "Formulário ou WhatsApp?",
+            "answer": "WhatsApp é o canal principal. Formulário simples pode ser adicionado como alternativa, se você preferir."
           },
           {
-            "question": "Como acompanho os resultados da minha landing page?",
-            "answer": "Configuramos Google Analytics e enviamos relatórios mensais com métricas importantes: visitantes, conversões, origem do tráfego e muito mais."
-          },
-          {
-            "question": "Vocês criam landing pages para qualquer nicho?",
-            "answer": "Sim! Já criamos landing pages para consultores, dentistas, advogados, lojas online, infoprodutos, aplicativos e muito mais. Adaptamos para qualquer segmento."
+            "question": "E as métricas?",
+            "answer": "Podemos integrar Plausible/GA4 e eventos de clique no WhatsApp. É opcional."
           }
         ]
       }
@@ -241,21 +229,21 @@
     {
       "component": "CTA",
       "variant": "centered",
-      "separator": "none",
+      "separator": "wave",
       "props": {
-        "title": "Pronto Para Vender Mais?",
-        "subtitle": "🔥 Promoção Limitada",
-        "description": "Garante sua landing page profissional hoje mesmo e comece a vender online. Primeiros 10 clientes ganham 50% de desconto!",
+        "title": "Pronto para começar do jeito certo?",
+        "subtitle": "Agenda por ordem de chegada",
+        "description": "Vamos publicar sua landing page com foco em conversão via WhatsApp e base técnica bem feita.",
         "button": {
-          "text": "Quero Minha Landing Page Agora",
-          "href": "#contato",
+          "text": "Iniciar conversa no WhatsApp",
+          "type": "whatsapp",
           "variant": "hero"
         },
         "features": [
-          "✅ Entrega em até 24 horas",
-          "✅ Design 100% personalizado",
-          "✅ Otimizado para conversão",
-          "✅ Suporte completo incluso"
+          "Entrega realista e bem planejada",
+          "2 rodadas de revisão",
+          "Publicação e HTTPS",
+          "Suporte inicial incluso"
         ]
       }
     }
