@@ -4,6 +4,7 @@ import Heading from '@/components/ui/Heading';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import siteData from '@/content/site.json';
 
 interface HeroProps {
   variant?: 'centered' | 'split' | 'minimal';
@@ -41,7 +42,6 @@ export default function Hero({
 }: HeroProps) {
   const getWhatsAppUrl = (button: any) => {
     if (button?.type === 'whatsapp') {
-      const siteData = require('@/content/site.json');
       const whatsappNumber = siteData?.contact?.whatsapp || '5511999999999';
       const prefillMessage = siteData?.contact?.prefill || 'Olá! Tenho interesse em uma landing page.';
       return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(prefillMessage)}`;

@@ -1,9 +1,11 @@
+
 import Section from '@/components/ui/Section';
 import Heading from '@/components/ui/Heading';
 import { Button } from '@/components/ui/button';
 import { Check, Star, Zap, Crown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
+import siteData from '@/content/site.json';
 
 interface Plan {
   name: string;
@@ -38,7 +40,6 @@ export default function Pricing({
 
   const getWhatsAppUrl = (button: any) => {
     if (button?.type === 'whatsapp') {
-      const siteData = require('@/content/site.json');
       const whatsappNumber = siteData?.contact?.whatsapp || '5511999999999';
       const prefillMessage = siteData?.contact?.prefill || 'Olá! Tenho interesse em uma landing page.';
       return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(prefillMessage)}`;
