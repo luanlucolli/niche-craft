@@ -27,6 +27,11 @@ const sectionComponents = {
   Footer,
 } as const;
 
+// Type-safe separator validation
+const isValidSeparator = (separator: string): separator is 'none' | 'wave' | 'curve' | 'diagonal' => {
+  return ['none', 'wave', 'curve', 'diagonal'].includes(separator);
+};
+
 export default function Index() {
   useEffect(() => {
     // Initialize SEO
@@ -49,7 +54,7 @@ export default function Index() {
 
   return (
     <main className="min-h-screen">
-      {homepageData.sections.map((section, index) => {
+      {homepageData.sections.map((section: any, index: number) => {
         const Component = sectionComponents[section.component as keyof typeof sectionComponents];
         
         if (!Component) {
@@ -57,11 +62,16 @@ export default function Index() {
           return null;
         }
 
+        // Validate and provide fallback for separator
+        const separator = section.separator && isValidSeparator(section.separator) 
+          ? section.separator 
+          : 'none';
+
         return (
           <Component
             key={index}
             variant={section.variant}
-            separator={section.separator}
+            separator={separator}
             {...section.props}
           />
         );
