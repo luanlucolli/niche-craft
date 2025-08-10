@@ -1,6 +1,6 @@
 
 import Container from '@/components/ui/Container';
-import { site } from '@/content/site.json';
+import siteData from '@/content/site.json';
 import { Facebook, Instagram, Linkedin, Twitter, Youtube, Phone, Mail, MapPin } from 'lucide-react';
 
 interface FooterProps {
@@ -24,7 +24,7 @@ export default function Footer({ variant = 'detailed' }: FooterProps) {
         <Container>
           <div className="text-center">
             <p className="text-white/80">
-              © {currentYear} {site.title}. Todos os direitos reservados.
+              © {currentYear} {siteData.title}. Todos os direitos reservados.
             </p>
           </div>
         </Container>
@@ -38,12 +38,12 @@ export default function Footer({ variant = 'detailed' }: FooterProps) {
         <Container>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-xl font-bold mb-2">{site.title}</h3>
-              <p className="text-white/80">{site.description}</p>
+              <h3 className="text-xl font-bold mb-2">{siteData.title}</h3>
+              <p className="text-white/80">{siteData.description}</p>
             </div>
             
             <div className="flex justify-end space-x-4">
-              {Object.entries(site.social).map(([platform, url]) => {
+              {Object.entries(siteData.social).map(([platform, url]) => {
                 if (!url) return null;
                 const Icon = socialIcons[platform as keyof typeof socialIcons];
                 if (!Icon) return null;
@@ -51,7 +51,7 @@ export default function Footer({ variant = 'detailed' }: FooterProps) {
                 return (
                   <a
                     key={platform}
-                    href={url}
+                    href={url as string}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
@@ -66,7 +66,7 @@ export default function Footer({ variant = 'detailed' }: FooterProps) {
           
           <div className="border-t border-white/20 mt-8 pt-8 text-center">
             <p className="text-white/80">
-              © {currentYear} {site.title}. Todos os direitos reservados.
+              © {currentYear} {siteData.title}. Todos os direitos reservados.
             </p>
           </div>
         </Container>
@@ -80,13 +80,13 @@ export default function Footer({ variant = 'detailed' }: FooterProps) {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">{site.title}</h3>
+            <h3 className="text-2xl font-bold mb-4">{siteData.title}</h3>
             <p className="text-white/80 mb-6 max-w-md">
-              {site.description}
+              {siteData.description}
             </p>
             
             <div className="flex space-x-4">
-              {Object.entries(site.social).map(([platform, url]) => {
+              {Object.entries(siteData.social).map(([platform, url]) => {
                 if (!url) return null;
                 const Icon = socialIcons[platform as keyof typeof socialIcons];
                 if (!Icon) return null;
@@ -94,7 +94,7 @@ export default function Footer({ variant = 'detailed' }: FooterProps) {
                 return (
                   <a
                     key={platform}
-                    href={url}
+                    href={url as string}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
@@ -114,28 +114,28 @@ export default function Footer({ variant = 'detailed' }: FooterProps) {
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-white/60" />
                 <a 
-                  href={`tel:${site.contact.phone}`}
+                  href={`tel:${siteData.contact.phone}`}
                   className="text-white/80 hover:text-white transition-colors"
                 >
-                  {site.contact.phone}
+                  {siteData.contact.phone}
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-white/60" />
                 <a 
-                  href={`mailto:${site.contact.email}`}
+                  href={`mailto:${siteData.contact.email}`}
                   className="text-white/80 hover:text-white transition-colors"
                 >
-                  {site.contact.email}
+                  {siteData.contact.email}
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-white/60 mt-1" />
                 <address className="text-white/80 not-italic">
-                  {site.contact.address.street}<br />
-                  {site.contact.address.neighborhood}<br />
-                  {site.contact.address.city}, {site.contact.address.state}<br />
-                  {site.contact.address.zipCode}
+                  {siteData.contact.address.street}<br />
+                  {siteData.contact.address.neighborhood}<br />
+                  {siteData.contact.address.city}, {siteData.contact.address.state}<br />
+                  {siteData.contact.address.zipCode}
                 </address>
               </li>
             </ul>
@@ -172,7 +172,7 @@ export default function Footer({ variant = 'detailed' }: FooterProps) {
         <div className="border-t border-white/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/80 text-sm">
-              © {currentYear} {site.title}. Todos os direitos reservados.
+              © {currentYear} {siteData.title}. Todos os direitos reservados.
             </p>
             
             <div className="flex gap-6 text-sm">

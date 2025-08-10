@@ -1,5 +1,4 @@
-
-import { site } from '@/content/site.json';
+import siteData from '@/content/site.json';
 
 export interface FormSubmissionResult {
   success: boolean;
@@ -12,7 +11,7 @@ export async function submitForm(
   data: Record<string, any>,
   endpoint?: string
 ): Promise<FormSubmissionResult> {
-  const formEndpoint = endpoint || site.forms.contactEndpoint;
+  const formEndpoint = endpoint || siteData.forms.contactEndpoint;
   
   if (!formEndpoint) {
     return {
@@ -31,7 +30,7 @@ export async function submitForm(
       },
       body: JSON.stringify({
         ...data,
-        _subject: `Novo contato do site ${site.title}`,
+        _subject: `Novo contato do site ${siteData.title}`,
         _replyto: data.email,
         _gotcha: '', // Honeypot field
         timestamp: new Date().toISOString(),
@@ -91,7 +90,7 @@ export function formatWhatsAppUrl(phone: string, message?: string): string {
 export function createContactMessage(formData: Record<string, any>): string {
   const { name, email, phone, subject, message } = formData;
   
-  return `Olá! Vim do site ${site.title}.
+  return `Olá! Vim do site ${siteData.title}.
 
 *Nome:* ${name}
 *Email:* ${email}

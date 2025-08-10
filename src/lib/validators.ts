@@ -1,4 +1,3 @@
-
 import { z } from 'zod';
 
 // Common validation schemas
@@ -115,7 +114,7 @@ export function validateField<T>(
     if (error instanceof z.ZodError) {
       return {
         isValid: false,
-        error: error.errors[0]?.message || 'Erro de validação',
+        error: error.issues[0]?.message || 'Erro de validação',
       };
     }
     return { isValid: false, error: 'Erro de validação' };
@@ -132,7 +131,7 @@ export function validateForm<T>(
   } catch (error) {
     if (error instanceof z.ZodError) {
       const errors: Record<string, string> = {};
-      error.errors.forEach((err) => {
+      error.issues.forEach((err) => {
         if (err.path.length > 0) {
           errors[err.path[0] as string] = err.message;
         }

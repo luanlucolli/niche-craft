@@ -1,5 +1,5 @@
 
-import { site } from '@/content/site.json';
+import siteData from '@/content/site.json';
 
 declare global {
   interface Window {
@@ -11,13 +11,13 @@ declare global {
 
 export function initAnalytics() {
   // Google Analytics 4
-  if (site.analytics.googleAnalytics) {
-    initGoogleAnalytics(site.analytics.googleAnalytics);
+  if (siteData.analytics.googleAnalytics) {
+    initGoogleAnalytics(siteData.analytics.googleAnalytics);
   }
 
   // Plausible Analytics
-  if (site.analytics.plausible.domain) {
-    initPlausible(site.analytics.plausible.domain, site.analytics.plausible.apiHost);
+  if (siteData.analytics.plausible.domain) {
+    initPlausible(siteData.analytics.plausible.domain, siteData.analytics.plausible.apiHost);
   }
 }
 
@@ -79,7 +79,7 @@ export function trackPageView(path?: string) {
   
   // Google Analytics 4
   if (window.gtag) {
-    window.gtag('config', site.analytics.googleAnalytics, {
+    window.gtag('config', siteData.analytics.googleAnalytics, {
       page_path: pagePath,
       page_title: document.title,
       page_location: window.location.href,

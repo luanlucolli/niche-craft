@@ -1,5 +1,4 @@
-
-import { site } from '@/content/site.json';
+import siteData from '@/content/site.json';
 
 export interface SEOProps {
   title?: string;
@@ -15,18 +14,18 @@ export interface SEOProps {
 
 export function generateSEO({
   title,
-  description = site.description,
-  image = site.seo.ogImage,
-  url = site.url,
+  description = siteData.description,
+  image = siteData.seo.ogImage,
+  url = siteData.url,
   type = 'website',
   publishedTime,
   modifiedTime,
-  author = site.author,
-  keywords = site.keywords,
+  author = siteData.author,
+  keywords = siteData.keywords,
 }: SEOProps = {}) {
-  const fullTitle = title ? `${title} | ${site.title}` : site.title;
-  const fullUrl = url.startsWith('http') ? url : `${site.url}${url}`;
-  const fullImage = image.startsWith('http') ? image : `${site.url}${image}`;
+  const fullTitle = title ? `${title} | ${siteData.title}` : siteData.title;
+  const fullUrl = url.startsWith('http') ? url : `${siteData.url}${url}`;
+  const fullImage = image.startsWith('http') ? image : `${siteData.url}${image}`;
 
   return {
     title: fullTitle,
@@ -49,7 +48,7 @@ export function generateSEO({
       },
       {
         name: 'language',
-        content: site.language,
+        content: siteData.language,
       },
       // Open Graph
       {
@@ -74,16 +73,16 @@ export function generateSEO({
       },
       {
         property: 'og:site_name',
-        content: site.title,
+        content: siteData.title,
       },
       {
         property: 'og:locale',
-        content: site.language.replace('-', '_'),
+        content: siteData.language.replace('-', '_'),
       },
       // Twitter
       {
         name: 'twitter:card',
-        content: site.seo.twitterCard,
+        content: siteData.seo.twitterCard,
       },
       {
         name: 'twitter:title',
@@ -131,7 +130,7 @@ export function generateSEO({
       {
         rel: 'icon',
         type: 'image/png',
-        href: site.seo.favicon,
+        href: siteData.seo.favicon,
       },
     ],
   };
@@ -183,37 +182,37 @@ export function generateStructuredData(type: 'Organization' | 'WebSite' | 'Artic
     case 'Organization':
       return {
         ...baseData,
-        name: site.title,
-        url: site.url,
-        logo: `${site.url}/logo.png`,
-        description: site.description,
+        name: siteData.title,
+        url: siteData.url,
+        logo: `${siteData.url}/logo.png`,
+        description: siteData.description,
         contactPoint: {
           '@type': 'ContactPoint',
-          telephone: site.contact.phone,
+          telephone: siteData.contact.phone,
           contactType: 'customer service',
-          email: site.contact.email,
+          email: siteData.contact.email,
         },
         address: {
           '@type': 'PostalAddress',
-          streetAddress: site.contact.address.street,
-          addressLocality: site.contact.address.city,
-          addressRegion: site.contact.address.state,
-          postalCode: site.contact.address.zipCode,
-          addressCountry: site.contact.address.country,
+          streetAddress: siteData.contact.address.street,
+          addressLocality: siteData.contact.address.city,
+          addressRegion: siteData.contact.address.state,
+          postalCode: siteData.contact.address.zipCode,
+          addressCountry: siteData.contact.address.country,
         },
-        sameAs: Object.values(site.social).filter(Boolean),
+        sameAs: Object.values(siteData.social).filter(Boolean),
         ...data,
       };
 
     case 'WebSite':
       return {
         ...baseData,
-        name: site.title,
-        url: site.url,
-        description: site.description,
+        name: siteData.title,
+        url: siteData.url,
+        description: siteData.description,
         publisher: {
           '@type': 'Organization',
-          name: site.title,
+          name: siteData.title,
         },
         ...data,
       };
@@ -225,19 +224,19 @@ export function generateStructuredData(type: 'Organization' | 'WebSite' | 'Artic
         description: data.description,
         author: {
           '@type': 'Person',
-          name: data.author || site.author,
+          name: data.author || siteData.author,
         },
         publisher: {
           '@type': 'Organization',
-          name: site.title,
+          name: siteData.title,
           logo: {
             '@type': 'ImageObject',
-            url: `${site.url}/logo.png`,
+            url: `${siteData.url}/logo.png`,
           },
         },
         datePublished: data.publishedTime,
         dateModified: data.modifiedTime || data.publishedTime,
-        image: data.image ? `${site.url}${data.image}` : `${site.url}${site.seo.ogImage}`,
+        image: data.image ? `${siteData.url}${data.image}` : `${siteData.url}${siteData.seo.ogImage}`,
         ...data,
       };
 

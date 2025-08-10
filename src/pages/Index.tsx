@@ -2,8 +2,8 @@
 import { useEffect } from 'react';
 import { generateSEO, updatePageSEO, generateStructuredData, injectStructuredData } from '@/lib/seo';
 import { initAnalytics } from '@/lib/analytics';
-import { site } from '@/content/site.json';
-import { homepage } from '@/content/homepage.json';
+import siteData from '@/content/site.json';
+import homepageData from '@/content/homepage.json';
 
 // Import all section components
 import Hero from '@/components/sections/Hero';
@@ -32,8 +32,8 @@ export default function Index() {
     // Initialize SEO
     const seoData = generateSEO({
       title: 'Início',
-      description: site.description,
-      keywords: site.keywords,
+      description: siteData.description,
+      keywords: siteData.keywords,
     });
     updatePageSEO(seoData);
 
@@ -49,7 +49,7 @@ export default function Index() {
 
   return (
     <main className="min-h-screen">
-      {homepage.sections.map((section, index) => {
+      {homepageData.sections.map((section, index) => {
         const Component = sectionComponents[section.component as keyof typeof sectionComponents];
         
         if (!Component) {
