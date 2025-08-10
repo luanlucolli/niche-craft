@@ -75,51 +75,43 @@
       "variant": "split",
       "separator": "curve",
       "props": {
-        "emphasis": "cta-first",
-        "background": "subtle-gradient",
-        "ribbon": { "text": "Demonstração gratuita", "icon": "Gift", "tone": "primary" },
         "title": "Está difícil transformar visitas em conversas?",
         "subtitle": "Consultoria rápida + demonstração focada em conversão",
         "pains": [
           {
             "icon": "Users",
             "title": "Leads somem no caminho",
-            "description": "Veem seu Instagram, mas não sabem como pedir."
+            "description": "As pessoas veem seu Instagram, mas não sabem como pedir ou tirar dúvidas."
           },
           {
             "icon": "PhoneCall",
             "title": "Contato fraco",
-            "description": "Você perde tempo explicando o básico."
+            "description": "O cliente não chega com contexto. Você perde tempo explicando o básico."
           },
           {
             "icon": "Rocket",
-            "title": "Site pesado/confuso",
-            "description": "Lento no 4G e sem próximo passo claro."
+            "title": "Site pesado ou confuso",
+            "description": "Carrega devagar no 4G e não deixa claro o próximo passo."
           }
         ],
         "steps": [
           {
             "icon": "SearchCheck",
-            "title": "Diagnóstico",
-            "description": "Oferta, canais e gargalos.",
+            "title": "Diagnóstico de 30 min",
+            "description": "Entendemos sua oferta, canais atuais e gargalos.",
             "duration": "30–40 min"
           },
           {
             "icon": "MonitorPlay",
             "title": "Demonstração",
-            "description": "Estrutura WhatsApp-first com exemplos."
+            "description": "Mostramos a estrutura ideal de landing com WhatsApp-first e exemplos reais."
           },
           {
             "icon": "Handshake",
             "title": "Próximos passos",
-            "description": "Prazo realista e publicação com HTTPS."
+            "description": "Prazo realista, escopo fechado e publicação com HTTPS."
           }
         ],
-        "ctaPanel": {
-          "title": "Agende sua demonstração",
-          "bullets": ["Sem compromisso", "30–40 min", "Foco em WhatsApp"],
-          "helper": "Respondemos rápido no horário comercial."
-        },
         "highlights": ["Sem compromisso", "Foco em WhatsApp", "Entrega realista"],
         "badge": "Demonstração gratuita",
         "disclaimer": "Sem promessas irreais: mostramos processo e previsibilidade.",
@@ -128,10 +120,14 @@
           "type": "whatsapp",
           "prefillMessage": "Olá! Quero agendar a demonstração e a consultoria inicial."
         },
-        "ctaSecondary": { "text": "Ver estrutura de seções", "href": "#cases" },
-        "floatingCTAOnMobile": true,
-        "illustrationFrame": "browser",
-        "image": { "src": "/demo-preview.png", "alt": "Prévia da demonstração" }
+        "ctaSecondary": {
+          "text": "Ver estrutura de seções",
+          "href": "#cases"
+        },
+        "image": {
+          "src": "/demo-preview.png",
+          "alt": "Prévia da demonstração"
+        }
       }
     },
     {
