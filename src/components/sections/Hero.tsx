@@ -45,17 +45,17 @@ export default function Hero({
       variant === 'split' && 'text-left max-w-2xl'
     )}>
       {subtitle && (
-        <p className="text-primary-600 font-semibold text-lg mb-4 animate-fade-in">
+        <p className="text-white/90 font-semibold text-lg mb-4 animate-fade-in bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 inline-block">
           {subtitle}
         </p>
       )}
       
-      <Heading level={1} size="hero" className="mb-6">
+      <Heading level={1} size="hero" className="mb-6 text-white">
         {title}
       </Heading>
       
       {description && (
-        <p className="text-lead mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+        <p className="text-white/80 text-lg md:text-xl leading-relaxed mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
           {description}
         </p>
       )}
@@ -81,7 +81,7 @@ export default function Hero({
           {secondaryButton && (
             <Button
               asChild
-              className="btn-secondary group"
+              className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/30 bg-white/10 backdrop-blur-sm px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:bg-white/20 hover:border-white/50 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent group"
             >
               <a href={secondaryButton.href}>
                 <Play className="mr-2 h-5 w-5" />
