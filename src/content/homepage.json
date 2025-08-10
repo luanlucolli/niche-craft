@@ -202,80 +202,89 @@
         "disclaimer": "Resultados variam conforme oferta, tráfego e operação do cliente."
       }
     },
-    {
-      "component": "Services",
-      "variant": "alternating",
-      "separator": "diagonal",
-      "props": {
-        "title": "Pacote enxuto, pensado para negócio local",
-        "subtitle": "Contato rápido agora e base pronta para crescer depois",
-        "services": [
-          {
-            "title": "Design profissional",
-            "description": "Layout limpo, hierarquia clara e variações de seções reutilizáveis.",
-            "features": ["Identidade aplicada", "Componentes reutilizáveis", "Sessões com separadores orgânicos", "Cópia orientada à ação"],
-            "image": "/service-design.png"
-          },
-          {
-            "title": "WhatsApp-first (formulário opcional)",
-            "description": "O contato direto converte mais. Mantemos formulário simples como plano B.",
-            "features": ["CTA principal em WhatsApp", "Mensagem predefinida", "Formulário via serviço externo (opcional)", "Feedback de envio acessível"],
-            "image": "/service-forms.png"
-          },
-          {
-            "title": "Performance e SEO on-page",
-            "description": "Imagens otimizadas, carga eficiente e metatags corretas.",
-            "features": ["Lazy-load de imagens", "Metatags OG/Twitter", "Sitemap/robots", "Sem bibliotecas pesadas desnecessárias"],
-            "image": "/service-performance.png"
-          }
-        ]
+  {
+  "component": "Services",
+  "variant": "alternating",
+  "separator": "diagonal",
+  "props": {
+    "title": "Pacote enxuto, pensado para negócio local",
+    "subtitle": "Contato rápido agora e base pronta para crescer depois",
+    "services": [
+      {
+        "title": "Design profissional",
+        "description": "Layout limpo, hierarquia clara e variações de seções reutilizáveis.",
+        "features": ["Identidade aplicada", "Componentes reutilizáveis", "Sessões com separadores orgânicos", "Cópia orientada à ação"],
+        "image": "/images/homepage/services/professional-design.png"
+      },
+      {
+        "title": "WhatsApp-first (formulário opcional)",
+        "description": "O contato direto converte mais. Mantemos formulário simples como plano B.",
+        "features": ["CTA principal em WhatsApp", "Mensagem predefinida", "Formulário via serviço externo (opcional)", "Feedback de envio acessível"],
+        "image": "/images/homepage/services/whatsapp-first.png"
+      },
+      {
+        "title": "Performance e SEO on-page",
+        "description": "Imagens otimizadas, carga eficiente e metatags corretas.",
+        "features": ["Lazy-load de imagens", "Metatags OG/Twitter", "Sitemap/robots", "Sem bibliotecas pesadas desnecessárias"],
+        "image": "/images/homepage/services/seo-optimization.png"
       }
-    },
-    {
-      "component": "ProcessSteps",
-      "variant": "matrix",
-      "separator": "curve",
-      "props": {
-        "title": "Como vamos tirar do papel",
-        "subtitle": "Processo claro. Cada um sabe o que fazer.",
-        "steps": [
-          {
-            "title": "Descoberta",
-            "you": ["Objetivo e diferenciais", "Conteúdo e fotos"],
-            "us": ["Roteiro e estrutura de seções"],
-            "duration": "1–2 dias",
-            "icon": "Search"
-          },
-          {
-            "title": "Rascunho visual (wireframe)",
-            "you": ["Aprovação rápida do layout"],
-            "us": ["Organização visual das seções"],
-            "duration": "1–2 dias",
-            "icon": "Layout"
-          },
-          {
-            "title": "Implementação",
-            "you": ["Ajustes de texto e imagens"],
-            "us": ["Desenvolvimento e integrações"],
-            "duration": "3–7 dias",
-            "icon": "Wrench"
-          },
-          {
-            "title": "Publicação",
-            "you": ["Domínio e DNS"],
-            "us": ["CDN, HTTPS e métricas básicas"],
-            "duration": "1 dia",
-            "icon": "UploadCloud"
-          }
-        ],
-        "footnote": "* Prazos contam após recebimento de conteúdo completo e pagamento inicial.",
-        "cta": {
-          "text": "Agendar diagnóstico",
-          "type": "whatsapp",
-          "prefillMessage": "Olá! Quero agendar a etapa de Descoberta."
-        }
+    ]
+  }
+},
+
+ {
+  "component": "ProcessSteps",
+  "variant": "matrix",
+  "separator": "curve",
+  "props": {
+    "title": "Como tiramos sua página do papel",
+    "subtitle": "Você envia o básico. Nós fazemos o resto. Sem complicação.",
+    "steps": [
+      {
+        "title": "Alinhamento rápido",
+        "you": ["Conte em 10 minutos seu objetivo", "Escolha o serviço principal"],
+        "us": ["Indicamos a melhor oferta", "Passamos um checklist simples (WhatsApp)"],
+        "duration": "no mesmo dia",
+        "icon": "MessageSquare"
+      },
+      {
+        "title": "Envio dos materiais",
+        "you": ["Fotos do negócio (pode ser do celular)", "Logo e contatos (endereço/WhatsApp)"],
+        "us": ["Modelo do que enviar", "Organizamos tudo por você"],
+        "duration": "1 dia após envio",
+        "icon": "FolderOpen"
+      },
+      {
+        "title": "Protótipo visual",
+        "you": ["Aprovação com 1 comentário (simples)"],
+        "us": ["Montamos o rascunho da página focado em conversão", "Seções certas: oferta, prova, CTA"],
+        "duration": "1–2 dias",
+        "icon": "Layout"
+      },
+      {
+        "title": "Construção e ajustes",
+        "you": ["Ajustes finais de texto/foto (se quiser)"],
+        "us": ["Desenvolvemos a página", "Preparamos cliques no WhatsApp e SEO básico"],
+        "duration": "3–5 dias",
+        "icon": "Wrench"
+      },
+      {
+        "title": "Publicação e acompanhamento",
+        "you": ["Apontar domínio (a gente ajuda)"],
+        "us": ["Subimos com HTTPS e CDN", "Acompanhamos os primeiros dias e ajustamos o que precisar"],
+        "duration": "no mesmo dia",
+        "icon": "Rocket"
       }
-    },
+    ],
+    "footnote": "* Prazos valem após recebermos os materiais essenciais. Tempo total médio: 5–10 dias.",
+    "cta": {
+      "text": "Falar no WhatsApp agora",
+      "type": "whatsapp",
+      "prefillMessage": "Olá! Quero começar minha página. O que vocês precisam de mim?"
+    }
+  }
+},
+
     {
       "component": "Pricing",
       "variant": "centered",
