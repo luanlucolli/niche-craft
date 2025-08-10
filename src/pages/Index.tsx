@@ -8,6 +8,10 @@ import homepageData from '@/content/homepage.json';
 // Import all section components
 import Hero from '@/components/sections/Hero';
 import Features from '@/components/sections/Features';
+import ConsultativeDemo from '@/components/sections/ConsultativeDemo';
+import ValueSnapshot from '@/components/sections/ValueSnapshot';
+import CaseCards from '@/components/sections/CaseCards';
+import ProcessTimeline from '@/components/sections/ProcessTimeline';
 import Services from '@/components/sections/Services';
 import Pricing from '@/components/sections/Pricing';
 import Testimonials from '@/components/sections/Testimonials';
@@ -19,6 +23,10 @@ import Footer from '@/components/sections/Footer';
 const sectionComponents = {
   Hero,
   Features,
+  ConsultativeDemo,
+  ValueSnapshot,
+  CaseCards,
+  ProcessTimeline,
   Services,
   Pricing,
   Testimonials,

@@ -1,4 +1,3 @@
-
 {
   "sections": [
     {
@@ -69,6 +68,66 @@
             "description": "Acessível, rápido e organizado → se quiser adicionar mais seções depois, não vira bagunça."
           }
         ]
+      }
+    },
+    {
+      "component": "ConsultativeDemo",
+      "variant": "split",
+      "separator": "curve",
+      "props": {
+        "title": "Está difícil transformar visitas em conversas?",
+        "subtitle": "Consultoria rápida + demonstração focada em conversão",
+        "pains": [
+          {
+            "icon": "Users",
+            "title": "Leads somem no caminho",
+            "description": "As pessoas veem seu Instagram, mas não sabem como pedir ou tirar dúvidas."
+          },
+          {
+            "icon": "PhoneCall",
+            "title": "Contato fraco",
+            "description": "O cliente não chega com contexto. Você perde tempo explicando o básico."
+          },
+          {
+            "icon": "Rocket",
+            "title": "Site pesado ou confuso",
+            "description": "Carrega devagar no 4G e não deixa claro o próximo passo."
+          }
+        ],
+        "steps": [
+          {
+            "icon": "SearchCheck",
+            "title": "Diagnóstico de 30 min",
+            "description": "Entendemos sua oferta, canais atuais e gargalos.",
+            "duration": "30–40 min"
+          },
+          {
+            "icon": "MonitorPlay",
+            "title": "Demonstração",
+            "description": "Mostramos a estrutura ideal de landing com WhatsApp-first e exemplos reais."
+          },
+          {
+            "icon": "Handshake",
+            "title": "Próximos passos",
+            "description": "Prazo realista, escopo fechado e publicação com HTTPS."
+          }
+        ],
+        "highlights": ["Sem compromisso", "Foco em WhatsApp", "Entrega realista"],
+        "badge": "Demonstração gratuita",
+        "disclaimer": "Sem promessas irreais: mostramos processo e previsibilidade.",
+        "ctaPrimary": {
+          "text": "Quero ver a demonstração",
+          "type": "whatsapp",
+          "prefillMessage": "Olá! Quero agendar a demonstração e a consultoria inicial."
+        },
+        "ctaSecondary": {
+          "text": "Ver estrutura de seções",
+          "href": "#cases"
+        },
+        "image": {
+          "src": "/demo-preview.png",
+          "alt": "Prévia da demonstração"
+        }
       }
     },
     {
