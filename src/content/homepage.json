@@ -6,17 +6,17 @@
       "variant": "centered",
       "separator": "curve",
       "props": {
-        "title": "Crie Landing Pages Profissionais em Minutos",
-        "subtitle": "Starter completo com React, TypeScript e Tailwind CSS. Pronto para ser clonado e customizado para qualquer nicho de negócio.",
-        "description": "Sistema modular, acessível e otimizado para SEO. Configure tudo via JSON sem tocar no código.",
+        "title": "Transforme Sua Ideia em uma Landing Page Profissional em Apenas 24 Horas",
+        "subtitle": "🚀 Serviço Completo de Criação",
+        "description": "Criamos landing pages de alta conversão que vendem mais. Design profissional, otimizado para mobile e com foco total em resultados para o seu negócio.",
         "primaryButton": {
-          "text": "Começar Agora",
-          "href": "#contato",
+          "text": "Quero Minha Landing Page",
+          "href": "#pricing",
           "variant": "hero"
         },
         "secondaryButton": {
-          "text": "Ver Demonstração",
-          "href": "#features",
+          "text": "Ver Portfólio",
+          "href": "#portfolio",
           "variant": "secondary"
         },
         "image": {
@@ -30,38 +30,38 @@
       "variant": "grid",
       "separator": "none",
       "props": {
-        "title": "Recursos Profissionais",
-        "subtitle": "Tudo que você precisa para criar landing pages de alta conversão",
+        "title": "Por Que Escolher Nosso Serviço?",
+        "subtitle": "Entregamos muito mais que apenas uma página bonita",
         "features": [
           {
-            "icon": "Zap",
-            "title": "Performance Otimizada",
-            "description": "Build estático ultra-rápido com Vite. Score 90+ no Lighthouse garantido."
+            "icon": "Clock",
+            "title": "Entrega Rápida",
+            "description": "Sua landing page fica pronta em até 24 horas. Sem enrolação, sem demora."
+          },
+          {
+            "icon": "Target",
+            "title": "Foco em Conversão",
+            "description": "Cada elemento é pensado para converter visitantes em clientes reais."
           },
           {
             "icon": "Smartphone",
-            "title": "Mobile-First",
-            "description": "Design responsivo que funciona perfeitamente em qualquer dispositivo."
-          },
-          {
-            "icon": "Accessibility",
-            "title": "Acessibilidade WCAG",
-            "description": "Padrões de acessibilidade AA implementados para alcançar todos os usuários."
+            "title": "100% Responsivo",
+            "description": "Funciona perfeitamente em celular, tablet e desktop. Seus clientes acessam de qualquer lugar."
           },
           {
             "icon": "Search",
-            "title": "SEO Otimizado",
-            "description": "Meta tags, Open Graph e estrutura semântica para máxima visibilidade."
+            "title": "Otimizado para Google",
+            "description": "SEO técnico implementado para sua página aparecer nos primeiros resultados."
           },
           {
-            "icon": "Palette",
-            "title": "Design System",
-            "description": "Componentes padronizados e customizáveis via Tailwind CSS."
+            "icon": "BarChart3",
+            "title": "Analytics Integrado",
+            "description": "Acompanhe visitas, conversões e resultados em tempo real."
           },
           {
-            "icon": "Code",
-            "title": "TypeScript",
-            "description": "Código type-safe e manutenível com TypeScript e validação Zod."
+            "icon": "Shield",
+            "title": "Hospedagem Segura",
+            "description": "Hospedagem premium inclusa por 1 ano. Rápida, segura e confiável."
           }
         ]
       }
@@ -71,26 +71,26 @@
       "variant": "alternating",
       "separator": "diagonal",
       "props": {
-        "title": "Seções Modulares",
-        "subtitle": "Componentes prontos para diferentes tipos de negócio",
+        "title": "O Que Está Incluído",
+        "subtitle": "Tudo que você precisa para vender online",
         "services": [
           {
-            "title": "Hero Personalizável",
-            "description": "Seção principal com múltiplas variações visuais e call-to-actions configuráveis.",
-            "features": ["Múltiplos layouts", "Botões customizáveis", "Imagens responsivas"],
-            "image": "/service-hero.png"
+            "title": "Design Profissional Personalizado",
+            "description": "Criamos um design único para o seu negócio, alinhado com sua marca e que transmite credibilidade instantânea.",
+            "features": ["Logo e identidade visual", "Cores da sua marca", "Imagens profissionais", "Copywriting persuasivo"],
+            "image": "/service-design.png"
           },
           {
-            "title": "Grid de Produtos/Menu",
-            "description": "Perfeito para lanchonetes, restaurantes e e-commerce. Layout em grid responsivo.",
-            "features": ["Grid responsivo", "Preços dinâmicos", "Categorias"],
-            "image": "/service-menu.png"
+            "title": "Formulários que Convertem",
+            "description": "Formulários estratégicos que capturam leads qualificados e transformam visitantes em oportunidades reais de negócio.",
+            "features": ["Integração com WhatsApp", "Captura de leads automática", "Notificações em tempo real", "CRM integrado"],
+            "image": "/service-forms.png"
           },
           {
-            "title": "Planos e Preços",
-            "description": "Seção de pricing profissional com comparação de planos e destaque de recursos.",
-            "features": ["Múltiplos planos", "Destaque de popular", "Botões de ação"],
-            "image": "/service-pricing.png"
+            "title": "Performance e Velocidade",
+            "description": "Sua landing page carrega em menos de 2 segundos, garantindo que você não perca nenhum cliente por lentidão.",
+            "features": ["Carregamento ultra-rápido", "Otimização de imagens", "CDN global", "Score 95+ no Google"],
+            "image": "/service-performance.png"
           }
         ]
       }
@@ -100,58 +100,67 @@
       "variant": "centered",
       "separator": "wave",
       "props": {
-        "title": "Planos de Exemplo",
-        "subtitle": "Demonstração da seção de preços configurável",
+        "title": "Investimento que Se Paga",
+        "subtitle": "Escolha o plano ideal para o seu negócio crescer",
         "plans": [
           {
-            "name": "Básico",
-            "price": "97",
-            "period": "mês",
-            "description": "Ideal para pequenos negócios e profissionais autônomos",
+            "name": "Landing Page Simples",
+            "price": "497",
+            "period": "única",
+            "description": "Perfeita para validar sua ideia ou pequenos negócios",
             "features": [
-              "Landing page responsiva",
-              "Formulário de contato",
-              "SEO básico",
-              "Suporte por email"
+              "Design profissional responsivo",
+              "Até 3 seções personalizadas",
+              "Formulário de contato integrado",
+              "SEO básico otimizado",
+              "Hospedagem por 6 meses",
+              "Suporte por 30 dias"
             ],
             "button": {
-              "text": "Escolher Básico",
+              "text": "Começar Agora",
               "href": "#contato"
             },
             "popular": false
           },
           {
-            "name": "Profissional",
-            "price": "197",
-            "period": "mês",
-            "description": "Para empresas que precisam de mais recursos e customização",
+            "name": "Landing Page Premium",
+            "price": "997",
+            "period": "única",
+            "description": "Para empresas que querem maximizar conversões",
             "features": [
-              "Tudo do plano Básico",
-              "Design personalizado",
-              "Analytics avançado",
-              "Integrações premium",
-              "Suporte prioritário"
+              "Tudo do plano Simples",
+              "Até 6 seções customizadas",
+              "Integração com WhatsApp Business",
+              "Google Analytics configurado",
+              "Pixel do Facebook integrado",
+              "2 revisões incluídas",
+              "Hospedagem por 1 ano",
+              "Suporte por 90 dias"
             ],
             "button": {
-              "text": "Escolher Profissional",
+              "text": "Escolher Premium",
               "href": "#contato"
             },
             "popular": true
           },
           {
-            "name": "Enterprise",
-            "price": "497",
-            "period": "mês",
-            "description": "Solução completa para grandes empresas e agências",
+            "name": "Landing Page Pro",
+            "price": "1.497",
+            "period": "única",
+            "description": "Solução completa para máximos resultados",
             "features": [
-              "Tudo do plano Profissional",
-              "Múltiplas landing pages",
-              "White-label",
-              "API personalizada",
-              "Gerente dedicado"
+              "Tudo do plano Premium",
+              "Design 100% personalizado",
+              "Copywriting profissional",
+              "A/B Testing configurado",
+              "Integração com CRM",
+              "Chat online integrado",
+              "Revisões ilimitadas",
+              "Hospedagem por 2 anos",
+              "Suporte prioritário"
             ],
             "button": {
-              "text": "Falar com Vendas",
+              "text": "Quero o Melhor",
               "href": "#contato"
             },
             "popular": false
@@ -164,30 +173,30 @@
       "variant": "carousel",
       "separator": "none",
       "props": {
-        "title": "O que nossos clientes dizem",
-        "subtitle": "Depoimentos reais de empresas que transformaram seus resultados",
+        "title": "Nossos Clientes Vendem Mais",
+        "subtitle": "Veja os resultados reais de quem investiu em uma landing page profissional",
         "testimonials": [
           {
-            "content": "O LP Starter nos permitiu criar uma landing page profissional em apenas algumas horas. A conversão aumentou 150%!",
-            "author": "Maria Silva",
+            "content": "Em 30 dias após lançar a landing page, nossas vendas aumentaram 250%. O investimento se pagou na primeira semana!",
+            "author": "Carlos Mendes",
             "role": "CEO",
-            "company": "TechStart",
+            "company": "TechSolutions",
             "avatar": "/testimonial-1.jpg",
             "rating": 5
           },
           {
-            "content": "Incrível como é simples customizar tudo via JSON. Nossa equipe consegue criar landing pages sem depender de developers.",
-            "author": "João Santos",
-            "role": "Marketing Manager",
+            "content": "A qualidade é impressionante. Nossa taxa de conversão subiu de 2% para 15%. Já recomendei para todos os meus parceiros.",
+            "author": "Marina Santos",
+            "role": "Diretora de Marketing",
             "company": "GrowthCorp",
             "avatar": "/testimonial-2.jpg",
             "rating": 5
           },
           {
-            "content": "A performance e acessibilidade são impressionantes. Nosso score no Lighthouse foi para 98/100 em todas as métricas.",
-            "author": "Ana Costa",
-            "role": "UX Designer",
-            "company": "DesignStudio",
+            "content": "Entrega rápida, design incrível e suporte excepcional. Em 24h nossa landing page estava no ar vendendo. Simplesmente perfeito!",
+            "author": "Roberto Silva",
+            "role": "Empreendedor",
+            "company": "StartupBrasil",
             "avatar": "/testimonial-3.jpg",
             "rating": 5
           }
@@ -199,28 +208,32 @@
       "variant": "accordion",
       "separator": "curve",
       "props": {
-        "title": "Perguntas Frequentes",
-        "subtitle": "Tire suas dúvidas sobre o LP Starter",
+        "title": "Dúvidas Frequentes",
+        "subtitle": "Tudo que você precisa saber antes de começar",
         "faqs": [
           {
-            "question": "Como funciona a customização via JSON?",
-            "answer": "Todo o conteúdo das páginas é configurado através de arquivos JSON. Você pode alterar textos, cores, layouts e configurações sem tocar no código React."
+            "question": "Em quanto tempo minha landing page fica pronta?",
+            "answer": "O prazo padrão é de 24 a 48 horas úteis após aprovação do briefing e pagamento. Para projetos mais complexos (plano Pro), pode levar até 5 dias úteis."
           },
           {
-            "question": "Preciso saber programar para usar?",
-            "answer": "Não! O sistema foi projetado para ser usado por designers, profissionais de marketing e qualquer pessoa que saiba editar um arquivo JSON simples."
+            "question": "Preciso fornecer as imagens e textos?",
+            "answer": "Não necessariamente. Temos banco de imagens profissionais e redatores especializados. Mas se você já tem materiais da sua marca, podemos usar sem problemas."
           },
           {
-            "question": "É possível integrar com ferramentas de analytics?",
-            "answer": "Sim! Suporte nativo para Google Analytics, Plausible e outras ferramentas populares de analytics, configurável via JSON."
+            "question": "A hospedagem está incluída?",
+            "answer": "Sim! Todos os planos incluem hospedagem premium por pelo menos 6 meses. Após esse período, você pode renovar conosco ou transferir para onde quiser."
           },
           {
-            "question": "Como funciona o sistema de formulários?",
-            "answer": "Os formulários são integrados com serviços como Formspree, Netlify Forms ou qualquer endpoint personalizado. Validação completa com Zod incluída."
+            "question": "Posso fazer alterações depois de pronta?",
+            "answer": "Claro! Cada plano inclui um número específico de revisões. Após esgotar as revisões incluídas, cobramos R$ 97 por alteração."
           },
           {
-            "question": "O código é otimizado para SEO?",
-            "answer": "Totalmente! Meta tags dinâmicas, Open Graph, Schema.org, sitemap e todas as melhores práticas de SEO já implementadas."
+            "question": "Como acompanho os resultados da minha landing page?",
+            "answer": "Configuramos Google Analytics e enviamos relatórios mensais com métricas importantes: visitantes, conversões, origem do tráfego e muito mais."
+          },
+          {
+            "question": "Vocês criam landing pages para qualquer nicho?",
+            "answer": "Sim! Já criamos landing pages para consultores, dentistas, advogados, lojas online, infoprodutos, aplicativos e muito mais. Adaptamos para qualquer segmento."
           }
         ]
       }
@@ -230,19 +243,19 @@
       "variant": "centered",
       "separator": "none",
       "props": {
-        "title": "Pronto para Começar?",
-        "subtitle": "Clone o repositório e tenha sua landing page profissional funcionando em minutos",
-        "description": "Código aberto, documentação completa e suporte da comunidade para você criar landing pages incríveis.",
+        "title": "Pronto Para Vender Mais?",
+        "subtitle": "🔥 Promoção Limitada",
+        "description": "Garante sua landing page profissional hoje mesmo e comece a vender online. Primeiros 10 clientes ganham 50% de desconto!",
         "button": {
-          "text": "Começar Agora",
+          "text": "Quero Minha Landing Page Agora",
           "href": "#contato",
           "variant": "hero"
         },
         "features": [
-          "✅ Setup em menos de 5 minutos",
-          "✅ Documentação completa",
-          "✅ Suporte da comunidade",
-          "✅ Atualizações gratuitas"
+          "✅ Entrega em até 24 horas",
+          "✅ Design 100% personalizado",
+          "✅ Otimizado para conversão",
+          "✅ Suporte completo incluso"
         ]
       }
     }

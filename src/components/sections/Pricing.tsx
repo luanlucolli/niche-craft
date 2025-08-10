@@ -2,8 +2,9 @@
 import Section from '@/components/ui/Section';
 import Heading from '@/components/ui/Heading';
 import { Button } from '@/components/ui/button';
-import { Check, Star } from 'lucide-react';
+import { Check, Star, Zap, Crown } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useState } from 'react';
 
 interface Plan {
   name: string;
@@ -33,66 +34,146 @@ export default function Pricing({
   subtitle,
   plans,
 }: PricingProps) {
-  const renderPlan = (plan: Plan, index: number) => (
-    <div
-      key={index}
-      className={cn(
-        'card-pricing relative',
-        plan.popular && 'ring-2 ring-primary-500 scale-105 z-10',
-        'animate-fade-in-up'
-      )}
-      style={{ animationDelay: `${index * 0.1}s` }}
-    >
-      {plan.popular && (
-        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-          <div className="inline-flex items-center gap-2 bg-primary-500 text-white px-4 py-2 rounded-full text-sm font-medium">
-            <Star className="w-4 h-4" />
-            Mais Popular
-          </div>
-        </div>
-      )}
-      
-      <div className="text-center mb-8">
-        <Heading level={3} size="md" className="mb-2">
-          {plan.name}
-        </Heading>
-        
-        <div className="mb-4">
-          <span className="text-4xl font-bold text-foreground">
-            R$ {plan.price}
-          </span>
-          <span className="text-muted-foreground">
-            /{plan.period}
-          </span>
-        </div>
-        
-        <p className="text-body">
-          {plan.description}
-        </p>
-      </div>
-      
-      <ul className="space-y-4 mb-8">
-        {plan.features.map((feature, featureIndex) => (
-          <li key={featureIndex} className="flex items-start gap-3">
-            <Check className="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5" />
-            <span className="text-body">{feature}</span>
-          </li>
-        ))}
-      </ul>
-      
-      <Button
-        asChild
+  const [hoveredPlan, setHoveredPlan] = useState<number | null>(null);
+
+  const getPlanIcon = (index: number) => {
+    switch (index) {
+      case 0: return Zap;
+      case 1: return Star;
+      case 2: return Crown;
+      default: return Star;
+    }
+  };
+
+  const renderPlan = (plan: Plan, index: number) => {
+    const PlanIcon = getPlanIcon(index);
+    const isHovered = hoveredPlan === index;
+    
+    return (
+      <div
+        key={index}
         className={cn(
-          'w-full',
-          plan.popular ? 'btn-hero' : 'btn-secondary'
+          'card-pricing relative cursor-pointer transition-all duration-500 transform-gpu',
+          plan.popular && 'ring-2 ring-primary-500 scale-105 z-10',
+          isHovered && !plan.popular && 'scale-105 shadow-2xl ring-2 ring-primary-300',
+          'animate-fade-in-up hover:shadow-2xl group'
         )}
+        style={{ animationDelay: `${index * 0.1}s` }}
+        onMouseEnter={() => setHoveredPlan(index)}
+        onMouseLeave={() => setHoveredPlan(null)}
       >
-        <a href={plan.button.href}>
-          {plan.button.text}
-        </a>
-      </Button>
-    </div>
-  );
+        {plan.popular && (
+          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-3 rounded-full text-sm font-bold shadow-lg animate-pulse">
+              <Star className="w-4 h-4" />
+              Mais Vendido
+            </div>
+          </div>
+        )}
+
+        {/* Efeito de brilho no hover */}
+        <div className={cn(
+          'absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500',
+          'bg-gradient-to-r from-primary-500/10 via-transparent to-secondary-500/10',
+          isHovered && 'opacity-100'
+        )} />
+        
+        <div className="relative z-10">
+          {/* Ícone do plano */}
+          <div className="flex justify-center mb-6">
+            <div className={cn(
+              'w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300',
+              plan.popular 
+                ? 'bg-gradient-to-br from-primary-500 to-primary-600 text-white' 
+                : 'bg-primary-100 text-primary-600',
+              isHovered && 'transform rotate-6 scale-110'
+            )}>
+              <PlanIcon className="w-8 h-8" />
+            </div>
+          </div>
+
+          <div className="text-center mb-8">
+            <Heading level={3} size="md" className="mb-2">
+              {plan.name}
+            </Heading>
+            
+            <div className="mb-4">
+              <span className={cn(
+                'text-4xl font-bold text-foreground transition-all duration-300',
+                isHovered && 'text-primary-600 transform scale-110 inline-block'
+              )}>
+                R$ {plan.price}
+              </span>
+              <span className="text-muted-foreground ml-1">
+                /{plan.period}
+              </span>
+            </div>
+            
+            <p className="text-body">
+              {plan.description}
+            </p>
+          </div>
+          
+          <ul className="space-y-4 mb-8">
+            {plan.features.map((feature, featureIndex) => (
+              <li 
+                key={featureIndex} 
+                className={cn(
+                  'flex items-start gap-3 transition-all duration-300',
+                  isHovered && 'transform translate-x-1'
+                )}
+                style={{ 
+                  animationDelay: `${0.5 + featureIndex * 0.1}s`,
+                  opacity: isHovered ? 1 : 0.9
+                }}
+              >
+                <div className={cn(
+                  'w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 transition-all duration-300',
+                  plan.popular 
+                    ? 'bg-primary-500 text-white' 
+                    : 'bg-primary-100 text-primary-600',
+                  isHovered && 'scale-110 bg-green-500 text-white'
+                )}>
+                  <Check className="w-3 h-3" />
+                </div>
+                <span className="text-body">{feature}</span>
+              </li>
+            ))}
+          </ul>
+          
+          <Button
+            asChild
+            className={cn(
+              'w-full transition-all duration-300 group/btn',
+              plan.popular 
+                ? 'btn-hero' 
+                : 'btn-secondary hover:bg-primary-500 hover:text-white',
+              isHovered && 'transform scale-105 shadow-lg'
+            )}
+          >
+            <a href={plan.button.href} className="relative overflow-hidden">
+              <span className="relative z-10 transition-transform duration-300 group-hover/btn:scale-105">
+                {plan.button.text}
+              </span>
+              {/* Efeito de onda no botão */}
+              <div className={cn(
+                'absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent',
+                'transform -skew-x-12 -translate-x-full transition-transform duration-700',
+                'group-hover/btn:translate-x-full'
+              )} />
+            </a>
+          </Button>
+        </div>
+
+        {/* Badge de desconto para planos específicos */}
+        {index === 1 && (
+          <div className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full transform rotate-12 animate-bounce">
+            50% OFF
+          </div>
+        )}
+      </div>
+    );
+  };
 
   return (
     <Section 
@@ -109,6 +190,12 @@ export default function Pricing({
             {subtitle}
           </p>
         )}
+        
+        {/* Badge promocional */}
+        <div className="mt-6 inline-flex items-center gap-2 bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-3 rounded-full text-sm font-bold animate-pulse">
+          <Zap className="w-4 h-4" />
+          Oferta limitada - Apenas 10 vagas!
+        </div>
       </div>
       
       <div className={cn(
@@ -118,6 +205,19 @@ export default function Pricing({
         plans.length >= 3 && 'md:grid-cols-2 lg:grid-cols-3'
       )}>
         {plans.map((plan, index) => renderPlan(plan, index))}
+      </div>
+
+      {/* Garantia e segurança */}
+      <div className="text-center mt-12 animate-fade-in" style={{ animationDelay: '0.8s' }}>
+        <div className="inline-flex items-center gap-4 bg-green-50 border border-green-200 rounded-2xl px-8 py-4">
+          <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+            <Check className="w-6 h-6 text-white" />
+          </div>
+          <div className="text-left">
+            <div className="font-bold text-green-800">Garantia de 30 dias</div>
+            <div className="text-green-600 text-sm">Se não ficar satisfeito, devolvemos 100% do seu dinheiro</div>
+          </div>
+        </div>
       </div>
     </Section>
   );
