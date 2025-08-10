@@ -1,0 +1,250 @@
+
+{
+  "sections": [
+    {
+      "component": "Hero",
+      "variant": "centered",
+      "separator": "curve",
+      "props": {
+        "title": "Crie Landing Pages Profissionais em Minutos",
+        "subtitle": "Starter completo com React, TypeScript e Tailwind CSS. Pronto para ser clonado e customizado para qualquer nicho de negócio.",
+        "description": "Sistema modular, acessível e otimizado para SEO. Configure tudo via JSON sem tocar no código.",
+        "primaryButton": {
+          "text": "Começar Agora",
+          "href": "#contato",
+          "variant": "hero"
+        },
+        "secondaryButton": {
+          "text": "Ver Demonstração",
+          "href": "#features",
+          "variant": "secondary"
+        },
+        "image": {
+          "src": "/hero-image.png",
+          "alt": "Landing Page Profissional"
+        }
+      }
+    },
+    {
+      "component": "Features",
+      "variant": "grid",
+      "separator": "none",
+      "props": {
+        "title": "Recursos Profissionais",
+        "subtitle": "Tudo que você precisa para criar landing pages de alta conversão",
+        "features": [
+          {
+            "icon": "Zap",
+            "title": "Performance Otimizada",
+            "description": "Build estático ultra-rápido com Vite. Score 90+ no Lighthouse garantido."
+          },
+          {
+            "icon": "Smartphone",
+            "title": "Mobile-First",
+            "description": "Design responsivo que funciona perfeitamente em qualquer dispositivo."
+          },
+          {
+            "icon": "Accessibility",
+            "title": "Acessibilidade WCAG",
+            "description": "Padrões de acessibilidade AA implementados para alcançar todos os usuários."
+          },
+          {
+            "icon": "Search",
+            "title": "SEO Otimizado",
+            "description": "Meta tags, Open Graph e estrutura semântica para máxima visibilidade."
+          },
+          {
+            "icon": "Palette",
+            "title": "Design System",
+            "description": "Componentes padronizados e customizáveis via Tailwind CSS."
+          },
+          {
+            "icon": "Code",
+            "title": "TypeScript",
+            "description": "Código type-safe e manutenível com TypeScript e validação Zod."
+          }
+        ]
+      }
+    },
+    {
+      "component": "Services",
+      "variant": "alternating",
+      "separator": "diagonal",
+      "props": {
+        "title": "Seções Modulares",
+        "subtitle": "Componentes prontos para diferentes tipos de negócio",
+        "services": [
+          {
+            "title": "Hero Personalizável",
+            "description": "Seção principal com múltiplas variações visuais e call-to-actions configuráveis.",
+            "features": ["Múltiplos layouts", "Botões customizáveis", "Imagens responsivas"],
+            "image": "/service-hero.png"
+          },
+          {
+            "title": "Grid de Produtos/Menu",
+            "description": "Perfeito para lanchonetes, restaurantes e e-commerce. Layout em grid responsivo.",
+            "features": ["Grid responsivo", "Preços dinâmicos", "Categorias"],
+            "image": "/service-menu.png"
+          },
+          {
+            "title": "Planos e Preços",
+            "description": "Seção de pricing profissional com comparação de planos e destaque de recursos.",
+            "features": ["Múltiplos planos", "Destaque de popular", "Botões de ação"],
+            "image": "/service-pricing.png"
+          }
+        ]
+      }
+    },
+    {
+      "component": "Pricing",
+      "variant": "centered",
+      "separator": "wave",
+      "props": {
+        "title": "Planos de Exemplo",
+        "subtitle": "Demonstração da seção de preços configurável",
+        "plans": [
+          {
+            "name": "Básico",
+            "price": "97",
+            "period": "mês",
+            "description": "Ideal para pequenos negócios e profissionais autônomos",
+            "features": [
+              "Landing page responsiva",
+              "Formulário de contato",
+              "SEO básico",
+              "Suporte por email"
+            ],
+            "button": {
+              "text": "Escolher Básico",
+              "href": "#contato"
+            },
+            "popular": false
+          },
+          {
+            "name": "Profissional",
+            "price": "197",
+            "period": "mês",
+            "description": "Para empresas que precisam de mais recursos e customização",
+            "features": [
+              "Tudo do plano Básico",
+              "Design personalizado",
+              "Analytics avançado",
+              "Integrações premium",
+              "Suporte prioritário"
+            ],
+            "button": {
+              "text": "Escolher Profissional",
+              "href": "#contato"
+            },
+            "popular": true
+          },
+          {
+            "name": "Enterprise",
+            "price": "497",
+            "period": "mês",
+            "description": "Solução completa para grandes empresas e agências",
+            "features": [
+              "Tudo do plano Profissional",
+              "Múltiplas landing pages",
+              "White-label",
+              "API personalizada",
+              "Gerente dedicado"
+            ],
+            "button": {
+              "text": "Falar com Vendas",
+              "href": "#contato"
+            },
+            "popular": false
+          }
+        ]
+      }
+    },
+    {
+      "component": "Testimonials",
+      "variant": "carousel",
+      "separator": "none",
+      "props": {
+        "title": "O que nossos clientes dizem",
+        "subtitle": "Depoimentos reais de empresas que transformaram seus resultados",
+        "testimonials": [
+          {
+            "content": "O LP Starter nos permitiu criar uma landing page profissional em apenas algumas horas. A conversão aumentou 150%!",
+            "author": "Maria Silva",
+            "role": "CEO",
+            "company": "TechStart",
+            "avatar": "/testimonial-1.jpg",
+            "rating": 5
+          },
+          {
+            "content": "Incrível como é simples customizar tudo via JSON. Nossa equipe consegue criar landing pages sem depender de developers.",
+            "author": "João Santos",
+            "role": "Marketing Manager",
+            "company": "GrowthCorp",
+            "avatar": "/testimonial-2.jpg",
+            "rating": 5
+          },
+          {
+            "content": "A performance e acessibilidade são impressionantes. Nosso score no Lighthouse foi para 98/100 em todas as métricas.",
+            "author": "Ana Costa",
+            "role": "UX Designer",
+            "company": "DesignStudio",
+            "avatar": "/testimonial-3.jpg",
+            "rating": 5
+          }
+        ]
+      }
+    },
+    {
+      "component": "FAQ",
+      "variant": "accordion",
+      "separator": "curve",
+      "props": {
+        "title": "Perguntas Frequentes",
+        "subtitle": "Tire suas dúvidas sobre o LP Starter",
+        "faqs": [
+          {
+            "question": "Como funciona a customização via JSON?",
+            "answer": "Todo o conteúdo das páginas é configurado através de arquivos JSON. Você pode alterar textos, cores, layouts e configurações sem tocar no código React."
+          },
+          {
+            "question": "Preciso saber programar para usar?",
+            "answer": "Não! O sistema foi projetado para ser usado por designers, profissionais de marketing e qualquer pessoa que saiba editar um arquivo JSON simples."
+          },
+          {
+            "question": "É possível integrar com ferramentas de analytics?",
+            "answer": "Sim! Suporte nativo para Google Analytics, Plausible e outras ferramentas populares de analytics, configurável via JSON."
+          },
+          {
+            "question": "Como funciona o sistema de formulários?",
+            "answer": "Os formulários são integrados com serviços como Formspree, Netlify Forms ou qualquer endpoint personalizado. Validação completa com Zod incluída."
+          },
+          {
+            "question": "O código é otimizado para SEO?",
+            "answer": "Totalmente! Meta tags dinâmicas, Open Graph, Schema.org, sitemap e todas as melhores práticas de SEO já implementadas."
+          }
+        ]
+      }
+    },
+    {
+      "component": "CTA",
+      "variant": "centered",
+      "separator": "none",
+      "props": {
+        "title": "Pronto para Começar?",
+        "subtitle": "Clone o repositório e tenha sua landing page profissional funcionando em minutos",
+        "description": "Código aberto, documentação completa e suporte da comunidade para você criar landing pages incríveis.",
+        "button": {
+          "text": "Começar Agora",
+          "href": "#contato",
+          "variant": "hero"
+        },
+        "features": [
+          "✅ Setup em menos de 5 minutos",
+          "✅ Documentação completa",
+          "✅ Suporte da comunidade",
+          "✅ Atualizações gratuitas"
+        ]
+      }
+    }
+  ]
+}

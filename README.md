@@ -1,73 +1,273 @@
-# Welcome to your Lovable project
 
-## Project info
+# 🚀 LP Starter - Landing Page Profissional
 
-**URL**: https://lovable.dev/projects/67144038-4e03-4c4a-ae0a-42a3938c113c
+Starter completo para criação de landing pages modernas, performáticas e reusáveis usando React + Vite + TypeScript + Tailwind CSS.
 
-## How can I edit this code?
+## ✨ Características
 
-There are several ways of editing your application.
+- 🎨 **Design System Profissional** - Tokens semânticos e componentes padronizados
+- 📱 **Mobile-First** - Responsivo e otimizado para todos os dispositivos  
+- ♿ **Acessibilidade WCAG AA** - Semântica correta e navegação por teclado
+- 🚀 **Performance Otimizada** - Score 90+ no Lighthouse garantido
+- 🔧 **Configurável via JSON** - Sem código hard-coded nos componentes
+- 🎯 **SEO Avançado** - Meta tags, Open Graph e Schema.org
+- 📊 **Analytics Integrado** - Google Analytics e Plausible
+- 🔥 **TypeScript** - Type-safe com validação Zod
 
-**Use Lovable**
+## 🏗️ Arquitetura
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/67144038-4e03-4c4a-ae0a-42a3938c113c) and start prompting.
+```
+src/
+├── components/
+│   ├── sections/          # Seções modulares
+│   │   ├── Hero.tsx
+│   │   ├── Features.tsx
+│   │   ├── Services.tsx
+│   │   ├── Pricing.tsx
+│   │   ├── Testimonials.tsx
+│   │   ├── FAQ.tsx
+│   │   ├── CTA.tsx
+│   │   └── Footer.tsx
+│   └── ui/               # Componentes base
+├── content/              # Configuração JSON
+│   ├── site.json        # Dados gerais do site
+│   └── homepage.json    # Estrutura da página
+└── lib/                 # Utilitários
+    ├── seo.ts
+    ├── analytics.ts
+    ├── forms.ts
+    └── validators.ts
+```
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🚦 Início Rápido
 
-**Use your preferred IDE**
+### 1. Clone o projeto
+```bash
+git clone <seu-repositorio>
+cd lp-starter
+```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### 2. Instale as dependências
+```bash
+npm install
+```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 3. Configure o conteúdo
+Edite os arquivos JSON em `src/content/`:
 
-Follow these steps:
+**site.json** - Dados gerais:
+```json
+{
+  "title": "Sua Empresa",
+  "description": "Descrição da sua empresa",
+  "contact": {
+    "email": "contato@suaempresa.com",
+    "phone": "+55 11 99999-9999",
+    "whatsapp": "+5511999999999"
+  },
+  "social": {
+    "instagram": "https://instagram.com/suaempresa",
+    "facebook": "https://facebook.com/suaempresa"
+  }
+}
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+**homepage.json** - Estrutura da página:
+```json
+{
+  "sections": [
+    {
+      "component": "Hero",
+      "variant": "centered",
+      "separator": "curve",
+      "props": {
+        "title": "Seu Título Principal",
+        "description": "Sua descrição",
+        "primaryButton": {
+          "text": "Começar Agora",
+          "href": "#contato"
+        }
+      }
+    }
+  ]
+}
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### 4. Execute o projeto
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## 🎨 Customização
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Cores e Tema
+Edite `src/index.css` para alterar as cores:
 
-**Use GitHub Codespaces**
+```css
+:root {
+  --primary: 221 83% 53%;    /* Azul principal */
+  --secondary: 262 83% 58%;  /* Roxo secundário */
+}
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Seções Disponíveis
 
-## What technologies are used for this project?
+- **Hero** - Seção principal com CTA
+- **Features** - Grid de recursos/benefícios  
+- **Services** - Serviços em layout alternado
+- **Pricing** - Tabela de preços
+- **Testimonials** - Depoimentos de clientes
+- **FAQ** - Perguntas frequentes
+- **CTA** - Chamada para ação final
+- **Footer** - Rodapé com contatos e links
 
-This project is built with:
+### Variantes de Layout
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Cada seção suporta múltiplas variantes:
 
-## How can I deploy this project?
+```json
+{
+  "component": "Hero",
+  "variant": "centered|left-aligned|split",
+  "separator": "none|wave|curve|diagonal"
+}
+```
 
-Simply open [Lovable](https://lovable.dev/projects/67144038-4e03-4c4a-ae0a-42a3938c113c) and click on Share -> Publish.
+## 📝 Formulários
 
-## Can I connect a custom domain to my Lovable project?
+### Configuração
+Configure o endpoint em `site.json`:
 
-Yes, you can!
+```json
+{
+  "forms": {
+    "contactEndpoint": "https://formspree.io/f/seu-form-id"
+  }
+}
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Serviços Suportados
+- Formspree
+- Netlify Forms  
+- EmailJS
+- Endpoint customizado
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 📊 Analytics
+
+### Google Analytics
+```json
+{
+  "analytics": {
+    "googleAnalytics": "G-XXXXXXXXXX"
+  }
+}
+```
+
+### Plausible
+```json
+{
+  "analytics": {
+    "plausible": {
+      "domain": "seusite.com",
+      "apiHost": "https://plausible.io"
+    }
+  }
+}
+```
+
+## 🚀 Deploy
+
+### Vercel
+```bash
+npm run build
+npx vercel --prod
+```
+
+### Netlify  
+```bash
+npm run build
+npx netlify deploy --prod --dir=dist
+```
+
+### GitHub Pages
+```bash
+npm run build
+# Configure GitHub Pages para usar a pasta dist/
+```
+
+## ✅ Checklist de Entrega
+
+### Antes de Publicar
+- [ ] Editar conteúdo em `site.json` e `homepage.json`
+- [ ] Configurar cores no `index.css`  
+- [ ] Adicionar imagens em `public/`
+- [ ] Configurar endpoint de formulário
+- [ ] Configurar analytics (opcional)
+- [ ] Testar responsividade
+- [ ] Verificar acessibilidade
+- [ ] Validar Lighthouse (90+ score)
+
+### Imagens Necessárias
+- `favicon.png` - 32x32px
+- `og-image.png` - 1200x630px  
+- `hero-image.png` - Imagem principal
+- `logo.png` - Logo da empresa
+
+## 🛠️ Scripts Disponíveis
+
+```bash
+npm run dev        # Servidor de desenvolvimento
+npm run build      # Build para produção
+npm run preview    # Preview do build
+npm run lint       # Linting com ESLint
+npm run format     # Formatação com Prettier
+npm run typecheck  # Verificação de tipos
+```
+
+## 📦 Tecnologias
+
+- **React 18** - Library UI
+- **Vite** - Build tool ultra-rápido
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Framework CSS
+- **Shadcn/ui** - Componentes base
+- **React Hook Form** - Gerenciamento de formulários
+- **Zod** - Validação de schemas
+- **Lucide React** - Ícones
+
+## 🎯 Performance
+
+### Scores Lighthouse Esperados
+- **Performance**: 90-100
+- **Accessibility**: 95-100  
+- **Best Practices**: 90-100
+- **SEO**: 90-100
+
+### Otimizações Incluídas
+- Code splitting automático
+- Lazy loading de imagens
+- Preconnect para fontes
+- Meta tags otimizadas
+- Structured data (Schema.org)
+
+## 🤝 Contribuição
+
+1. Fork o projeto
+2. Crie sua feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para detalhes.
+
+## 💡 Suporte
+
+- 📧 Email: suporte@lp-starter.com
+- 💬 Discord: [Community Server](https://discord.gg/lp-starter)
+- 📖 Docs: [Documentação Completa](https://docs.lp-starter.com)
+
+---
+
+Feito com ❤️ para acelerar criação de landing pages profissionais.

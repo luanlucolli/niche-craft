@@ -1,14 +1,71 @@
-// Update this page (the content is just a fallback if you fail to update the page)
 
-const Index = () => {
+import { useEffect } from 'react';
+import { generateSEO, updatePageSEO, generateStructuredData, injectStructuredData } from '@/lib/seo';
+import { initAnalytics } from '@/lib/analytics';
+import { site } from '@/content/site.json';
+import { homepage } from '@/content/homepage.json';
+
+// Import all section components
+import Hero from '@/components/sections/Hero';
+import Features from '@/components/sections/Features';
+import Services from '@/components/sections/Services';
+import Pricing from '@/components/sections/Pricing';
+import Testimonials from '@/components/sections/Testimonials';
+import FAQ from '@/components/sections/FAQ';
+import CTA from '@/components/sections/CTA';
+import Footer from '@/components/sections/Footer';
+
+// Component mapping
+const sectionComponents = {
+  Hero,
+  Features,
+  Services,
+  Pricing,
+  Testimonials,
+  FAQ,
+  CTA,
+  Footer,
+} as const;
+
+export default function Index() {
+  useEffect(() => {
+    // Initialize SEO
+    const seoData = generateSEO({
+      title: 'Início',
+      description: site.description,
+      keywords: site.keywords,
+    });
+    updatePageSEO(seoData);
+
+    // Add structured data
+    const organizationData = generateStructuredData('Organization', {});
+    const websiteData = generateStructuredData('WebSite', {});
+    injectStructuredData(organizationData);
+    injectStructuredData(websiteData);
+
+    // Initialize analytics
+    initAnalytics();
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
-  );
-};
+    <main className="min-h-screen">
+      {homepage.sections.map((section, index) => {
+        const Component = sectionComponents[section.component as keyof typeof sectionComponents];
+        
+        if (!Component) {
+          console.warn(`Component ${section.component} not found`);
+          return null;
+        }
 
-export default Index;
+        return (
+          <Component
+            key={index}
+            variant={section.variant}
+            separator={section.separator}
+            {...section.props}
+          />
+        );
+      })}
+    </main>
+  );
+}
