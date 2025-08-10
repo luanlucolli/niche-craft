@@ -232,39 +232,48 @@
       }
     },
     {
-      "component": "ProcessTimeline",
-      "variant": "horizontal",
+      "component": "ProcessSteps",
+      "variant": "matrix",
       "separator": "curve",
       "props": {
         "title": "Como vamos tirar do papel",
-        "subtitle": "Processo claro, responsabilidade compartilhada",
+        "subtitle": "Processo claro. Cada um sabe o que fazer.",
         "steps": [
           {
-            "titulo": "Descoberta",
-            "voce": "Objetivo, diferenciais, conteúdo e fotos",
-            "nos": "Estrutura de seções e roteiro",
-            "prazo": "1–2 dias"
+            "title": "Descoberta",
+            "you": ["Objetivo e diferenciais", "Conteúdo e fotos"],
+            "us": ["Roteiro e estrutura de seções"],
+            "duration": "1–2 dias",
+            "icon": "Search"
           },
           {
-            "titulo": "Wireframe",
-            "voce": "Aprovação rápida do layout",
-            "nos": "Organização visual das seções",
-            "prazo": "1–2 dias"
+            "title": "Rascunho visual (wireframe)",
+            "you": ["Aprovação rápida do layout"],
+            "us": ["Organização visual das seções"],
+            "duration": "1–2 dias",
+            "icon": "Layout"
           },
           {
-            "titulo": "Implementação",
-            "voce": "Ajustes de texto e imagens",
-            "nos": "Desenvolvimento e integrações",
-            "prazo": "3–7 dias"
+            "title": "Implementação",
+            "you": ["Ajustes de texto e imagens"],
+            "us": ["Desenvolvimento e integrações"],
+            "duration": "3–7 dias",
+            "icon": "Wrench"
           },
           {
-            "titulo": "Publicação",
-            "voce": "Configuração de domínio e DNS",
-            "nos": "CDN, HTTPS e métricas básicas",
-            "prazo": "1 dia"
+            "title": "Publicação",
+            "you": ["Domínio e DNS"],
+            "us": ["CDN, HTTPS e métricas básicas"],
+            "duration": "1 dia",
+            "icon": "UploadCloud"
           }
         ],
-        "note": "Prazos contam após recebimento de conteúdo completo e pagamento inicial."
+        "footnote": "* Prazos contam após recebimento de conteúdo completo e pagamento inicial.",
+        "cta": {
+          "text": "Agendar diagnóstico",
+          "type": "whatsapp",
+          "prefillMessage": "Olá! Quero agendar a etapa de Descoberta."
+        }
       }
     },
     {

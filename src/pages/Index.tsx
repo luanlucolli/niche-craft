@@ -12,6 +12,7 @@ import ConsultativeDemo from '@/components/sections/ConsultativeDemo';
 import ValueSnapshot from '@/components/sections/ValueSnapshot';
 import CaseCards from '@/components/sections/CaseCards';
 import ProcessTimeline from '@/components/sections/ProcessTimeline';
+import ProcessSteps from '@/components/sections/ProcessSteps';
 import Services from '@/components/sections/Services';
 import Pricing from '@/components/sections/Pricing';
 import Testimonials from '@/components/sections/Testimonials';
@@ -27,6 +28,7 @@ const sectionComponents = {
   ValueSnapshot,
   CaseCards,
   ProcessTimeline,
+  ProcessSteps,
   Services,
   Pricing,
   Testimonials,
