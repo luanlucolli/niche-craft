@@ -5,34 +5,32 @@ import { ReactNode } from 'react';
 interface HeadingProps {
   children: ReactNode;
   level?: 1 | 2 | 3 | 4 | 5 | 6;
-  size?: 'hero' | 'xl' | 'lg' | 'md' | 'sm' | 'xs';
-  className?: string;
+  size?: 'hero' | 'xl' | 'lg' | 'md' | 'sm';
   centered?: boolean;
+  className?: string;
 }
 
 export default function Heading({ 
   children, 
   level = 2, 
-  size, 
-  className,
-  centered = false 
+  size = 'lg', 
+  centered = false,
+  className 
 }: HeadingProps) {
   const Component = `h${level}` as keyof JSX.IntrinsicElements;
-  
-  // Auto-size based on heading level if no size specified
-  const defaultSize = size || (['hero', 'xl', 'lg', 'md', 'sm', 'xs'] as const)[level - 1] || 'md';
   
   return (
     <Component
       className={cn(
         'font-bold tracking-tight text-foreground',
         {
-          'heading-hero': defaultSize === 'hero',
-          'heading-xl': defaultSize === 'xl',
-          'heading-lg': defaultSize === 'lg',
-          'heading-md': defaultSize === 'md',
-          'heading-sm': defaultSize === 'sm',
-          'text-lg font-semibold': defaultSize === 'xs',
+          // Responsive sizes
+          'text-3xl sm:text-4xl md:text-5xl lg:text-6xl': size === 'hero',
+          'text-2xl sm:text-3xl md:text-4xl lg:text-5xl': size === 'xl',
+          'text-xl sm:text-2xl md:text-3xl lg:text-4xl': size === 'lg',
+          'text-lg sm:text-xl md:text-2xl lg:text-3xl': size === 'md',
+          'text-base sm:text-lg md:text-xl lg:text-2xl': size === 'sm',
+          
           'text-center': centered,
         },
         className

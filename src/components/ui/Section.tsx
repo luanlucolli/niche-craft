@@ -26,13 +26,13 @@ export default function Section({
     <section
       id={id}
       className={cn(
-        'relative',
+        'relative w-full',
         {
-          // Padding
-          'py-8': paddingY === 'sm',
-          'py-section': paddingY === 'md',
-          'py-section lg:py-24': paddingY === 'lg',
-          'py-section lg:py-32': paddingY === 'xl',
+          // Responsive padding
+          'py-8 sm:py-12 md:py-16': paddingY === 'sm',
+          'py-12 sm:py-16 md:py-20': paddingY === 'md',
+          'py-16 sm:py-20 md:py-24 lg:py-32': paddingY === 'lg',
+          'py-20 sm:py-24 md:py-32 lg:py-40': paddingY === 'xl',
           
           // Background
           'bg-background': background === 'default',
