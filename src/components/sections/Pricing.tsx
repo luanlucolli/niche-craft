@@ -2,7 +2,7 @@
 import Section from '@/components/ui/Section';
 import Heading from '@/components/ui/Heading';
 import { Button } from '@/components/ui/button';
-import { Check, Star, Zap, Crown } from 'lucide-react';
+import { Check, Star, Zap, Crown, UserCheck, UserX } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
 import siteData from '@/content/site.json';
@@ -13,6 +13,8 @@ interface Plan {
   period: string;
   description: string;
   features: string[];
+  forWho?: string;
+  notForWho?: string;
   button: {
     text: string;
     href?: string;
@@ -125,7 +127,7 @@ export default function Pricing({
             </p>
           </div>
           
-          <ul className="space-y-4 mb-8">
+          <ul className="space-y-4 mb-6">
             {plan.features.map((feature, featureIndex) => (
               <li 
                 key={featureIndex} 
@@ -151,6 +153,24 @@ export default function Pricing({
               </li>
             ))}
           </ul>
+
+          {/* Para quem é / Para quem não é */}
+          {(plan.forWho || plan.notForWho) && (
+            <div className="mb-6 space-y-3 text-sm">
+              {plan.forWho && (
+                <div className="flex items-start gap-2 p-3 bg-green-50 rounded-lg border border-green-200">
+                  <UserCheck className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                  <span className="text-green-700">{plan.forWho}</span>
+                </div>
+              )}
+              {plan.notForWho && (
+                <div className="flex items-start gap-2 p-3 bg-red-50 rounded-lg border border-red-200">
+                  <UserX className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
+                  <span className="text-red-700">{plan.notForWho}</span>
+                </div>
+              )}
+            </div>
+          )}
           
           <Button
             asChild
@@ -182,13 +202,6 @@ export default function Pricing({
             </a>
           </Button>
         </div>
-
-        {/* Badge de desconto para planos específicos */}
-        {index === 1 && (
-          <div className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full transform rotate-12 animate-bounce">
-            50% OFF
-          </div>
-        )}
       </div>
     );
   };

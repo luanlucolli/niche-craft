@@ -29,6 +29,7 @@
     "youtube": ""
   },
   "analytics": {
+    "enabled": false,
     "googleAnalytics": "",
     "plausible": {
       "domain": "",

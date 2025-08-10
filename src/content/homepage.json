@@ -9,6 +9,11 @@
         "title": "Landing pages que realmente convertem",
         "subtitle": "Entrega enxuta e bem-feita",
         "description": "Páginas leves, responsivas e com SEO on-page, feitas para gerar contato qualificado. Prazos realistas para um trabalho sólido.",
+        "valueBullets": [
+          "Mais contatos qualificados no WhatsApp",
+          "Conteúdo rápido de atualizar",
+          "Publicação com HTTPS e domínio configurado"
+        ],
         "primaryButton": {
           "text": "Falar no WhatsApp",
           "type": "whatsapp",
@@ -36,34 +41,106 @@
           {
             "icon": "Target",
             "title": "WhatsApp em destaque",
-            "description": "CTA principal com mensagem pré-preenchida e tracking de clique."
+            "description": "Seu cliente clica direto no botão e já chega com a mensagem pronta → você não perde tempo explicando o que ele quer."
           },
           {
             "icon": "Smartphone",
-            "title": "Responsivo de verdade",
-            "description": "Mobile-first, acessível e rápido em 3G/4G."
+            "title": "Seu cliente consegue pedir do celular",
+            "description": "Página que abre rápido no 4G e não trava na hora de enviar mensagem → menos desistência."
           },
           {
             "icon": "Search",
-            "title": "SEO on-page",
-            "description": "Metatags, OG/Twitter, sitemap/robots e cópia clara. Sem prometer ranking."
+            "title": "Aparece no Google do jeito certo",
+            "description": "Título, descrição e imagem que aparecem quando compartilham → sem prometer ranking, mas com estrutura correta."
           },
           {
             "icon": "Zap",
-            "title": "Publicação e HTTPS",
-            "description": "Deploy em CDN (Vercel/Netlify) na sua conta, com domínio e DNS orientados."
+            "title": "Publicação sem dor de cabeça",
+            "description": "Fica no ar com certificado de segurança → orientamos domínio e DNS para você não se preocupar."
           },
           {
             "icon": "BarChart3",
-            "title": "Métricas opcionais",
-            "description": "Integração com Plausible/GA4 quando desejado, sem scripts pesados."
+            "title": "Métricas que fazem sentido",
+            "description": "Você vê quantos clicaram no WhatsApp → dados leves, sem deixar o site pesado."
           },
           {
             "icon": "Shield",
-            "title": "Boas práticas",
-            "description": "Acessibilidade, Lighthouse equilibrado e código organizado para evoluir."
+            "title": "Código limpo para evoluir",
+            "description": "Acessível, rápido e organizado → se quiser adicionar mais seções depois, não vira bagunça."
           }
         ]
+      }
+    },
+    {
+      "component": "ValueSnapshot",
+      "variant": "grid",
+      "separator": "none",
+      "props": {
+        "title": "Resultados que fazem diferença",
+        "subtitle": "Medições reais, sem promessas vazias",
+        "kpis": [
+          {
+            "label": "Cliques no WhatsApp",
+            "value": "125/mês",
+            "mode": "measured",
+            "description": "Eventos rastreados"
+          },
+          {
+            "label": "Leads estimados",
+            "value": "30–50",
+            "mode": "estimated",
+            "description": "Baseado em conversão média"
+          },
+          {
+            "label": "Abre rápido no 4G",
+            "value": "< 2,0s",
+            "mode": "measured",
+            "description": "Tempo de carregamento"
+          },
+          {
+            "label": "Disponibilidade",
+            "value": "99,9%",
+            "mode": "measured",
+            "description": "CDN confiável"
+          }
+        ],
+        "note": "Medição via eventos de clique e analytics leve, sem scripts pesados."
+      }
+    },
+    {
+      "component": "CaseCards",
+      "variant": "cards",
+      "separator": "diagonal",
+      "props": {
+        "title": "Casos rápidos",
+        "subtitle": "Exemplos reais de como resolvemos",
+        "cases": [
+          {
+            "segmento": "Lanchonete local",
+            "problema": "Clientes ligavam para perguntar cardápio e preço",
+            "intervencao": "Landing com cardápio e CTA WhatsApp direto",
+            "resultado": "Pedidos via WhatsApp aumentaram no primeiro mês",
+            "tempo": "10 dias úteis",
+            "type": "measured"
+          },
+          {
+            "segmento": "Serviços residenciais",
+            "problema": "Leads perdidos fora do horário comercial",
+            "intervencao": "CTA WhatsApp + formulário como plano B",
+            "resultado": "Mais contatos agendados para o dia seguinte",
+            "tempo": "14 dias úteis",
+            "type": "estimated"
+          },
+          {
+            "segmento": "Consultoria",
+            "problema": "Site antigo não abria no celular",
+            "intervencao": "Landing responsiva com foco mobile",
+            "resultado": "60% dos contatos agora vêm do celular",
+            "tempo": "12 dias úteis",
+            "type": "measured"
+          }
+        ],
+        "disclaimer": "Resultados variam conforme oferta, tráfego e operação do cliente."
       }
     },
     {
@@ -96,6 +173,42 @@
       }
     },
     {
+      "component": "ProcessTimeline",
+      "variant": "horizontal",
+      "separator": "curve",
+      "props": {
+        "title": "Como vamos tirar do papel",
+        "subtitle": "Processo claro, responsabilidade compartilhada",
+        "steps": [
+          {
+            "titulo": "Descoberta",
+            "voce": "Objetivo, diferenciais, conteúdo e fotos",
+            "nos": "Estrutura de seções e roteiro",
+            "prazo": "1–2 dias"
+          },
+          {
+            "titulo": "Wireframe",
+            "voce": "Aprovação rápida do layout",
+            "nos": "Organização visual das seções",
+            "prazo": "1–2 dias"
+          },
+          {
+            "titulo": "Implementação",
+            "voce": "Ajustes de texto e imagens",
+            "nos": "Desenvolvimento e integrações",
+            "prazo": "3–7 dias"
+          },
+          {
+            "titulo": "Publicação",
+            "voce": "Configuração de domínio e DNS",
+            "nos": "CDN, HTTPS e métricas básicas",
+            "prazo": "1 dia"
+          }
+        ],
+        "note": "Prazos contam após recebimento de conteúdo completo e pagamento inicial."
+      }
+    },
+    {
       "component": "Pricing",
       "variant": "centered",
       "separator": "wave",
@@ -116,6 +229,8 @@
               "2 rodadas de revisão",
               "Suporte inicial por 30 dias"
             ],
+            "forWho": "Ideal para: negócios locais que querem presença digital rápida",
+            "notForWho": "Não é ideal para: e-commerce ou blogs complexos",
             "button": {
               "text": "Começar pelo Essencial",
               "type": "whatsapp"
@@ -135,6 +250,8 @@
               "2 rodadas de revisão",
               "Suporte inicial por 60 dias"
             ],
+            "forWho": "Ideal para: empresas que querem se destacar da concorrência",
+            "notForWho": "Não é ideal para: quem quer o mais barato possível",
             "button": {
               "text": "Subir para o Profissional",
               "type": "whatsapp"
@@ -151,11 +268,121 @@
               "Relatório simples de métricas",
               "Até 1h de alterações/mês"
             ],
+            "forWho": "Ideal para: quem quer manter o site sempre atualizado",
+            "notForWho": "Não é ideal para: grandes mudanças ou redesigns",
             "button": {
               "text": "Quero manter atualizado",
               "type": "whatsapp"
             },
             "popular": false
+          }
+        ]
+      }
+    },
+    {
+      "component": "RiskReversal",
+      "variant": "table",
+      "separator": "none",
+      "props": {
+        "title": "Sem sustos e sem escopo infinito",
+        "subtitle": "Transparência total no que está e não está incluído",
+        "inclui": [
+          "Até 2 rodadas de revisão",
+          "Publicação com HTTPS",
+          "CTA WhatsApp configurado",
+          "SEO on-page básico",
+          "Responsivo (mobile + desktop)",
+          "Suporte inicial incluso"
+        ],
+        "naoInclui": [
+          "E-commerce completo",
+          "Blog com dezenas de posts",
+          "CRM ou sistema complexo",
+          "Campanhas de mídia paga",
+          "Integração com ERPs",
+          "Mudanças após aprovação final"
+        ],
+        "policies": [
+          "2 rodadas de revisão incluídas por projeto",
+          "Mudanças extras = cobrança de seção adicional",
+          "Publicação sempre na conta do cliente",
+          "7 dias para correções menores após entrega"
+        ]
+      }
+    },
+    {
+      "component": "FitCheck",
+      "variant": "split",
+      "separator": "diagonal",
+      "props": {
+        "title": "É para você?",
+        "subtitle": "Honestidade antes de vender",
+        "sim": [
+          "Você já atende clientes por WhatsApp",
+          "Precisa sair do zero rapidamente",
+          "Quer uma página leve e direta",
+          "Tem conteúdo e fotos prontos",
+          "Busca presença digital profissional"
+        ],
+        "nao": [
+          "Precisa de loja virtual completa",
+          "Quer blog pesado com SEO avançado",
+          "Precisa de sistema de gestão",
+          "Quer o mais barato do mercado",
+          "Não tem tempo para fornecer conteúdo"
+        ],
+        "note": "Na dúvida? Chama no WhatsApp que ajudamos a decidir."
+      }
+    },
+    {
+      "component": "ImpactCalculator",
+      "variant": "simple",
+      "separator": "wave",
+      "props": {
+        "title": "Calculadora de impacto",
+        "subtitle": "Ninguém melhor que você para prever seu retorno",
+        "description": "Ferramenta simples para estimar o potencial da sua landing page. Tudo roda no seu navegador, sem enviar dados.",
+        "labels": {
+          "visitas": "Visitas por mês",
+          "taxa": "Taxa de conversão (%)",
+          "ticket": "Ticket médio (R$)"
+        },
+        "placeholders": {
+          "visitas": "ex: 1000",
+          "taxa": "ex: 3",
+          "ticket": "ex: 200"
+        },
+        "cta": "Calcular potencial",
+        "disclaimer": "Estimativa ilustrativa baseada nos seus dados. Não é promessa de resultado."
+      }
+    },
+    {
+      "component": "TrustBadges",
+      "variant": "row",
+      "separator": "none",
+      "props": {
+        "title": "Confiável por padrão",
+        "subtitle": "Boas práticas que protegem você e seus clientes",
+        "badges": [
+          {
+            "label": "HTTPS/CDN",
+            "description": "Conexão segura e carregamento rápido"
+          },
+          {
+            "label": "Rápido no celular",
+            "description": "Otimizado para conexões 3G/4G"
+          },
+          {
+            "label": "Acessível",
+            "description": "Funciona com leitores de tela"
+          },
+          {
+            "label": "LGPD",
+            "description": "Consentimento de cookies quando necessário"
+          },
+          {
+            "label": "Código limpo",
+            "description": "Fácil de manter e evoluir"
           }
         ]
       }

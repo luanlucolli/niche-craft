@@ -2,7 +2,7 @@
 import Section from '@/components/ui/Section';
 import Heading from '@/components/ui/Heading';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import siteData from '@/content/site.json';
 
@@ -12,6 +12,7 @@ interface HeroProps {
   title: string;
   subtitle?: string;
   description?: string;
+  valueBullets?: string[];
   primaryButton?: {
     text: string;
     href?: string;
@@ -36,6 +37,7 @@ export default function Hero({
   title,
   subtitle,
   description,
+  valueBullets,
   primaryButton,
   secondaryButton,
   image,
@@ -94,6 +96,24 @@ export default function Hero({
             <p className="text-white/80 text-lg leading-relaxed mb-8">
               {description}
             </p>
+          )}
+
+          {/* Value bullets */}
+          {valueBullets && (
+            <div className="mb-8 space-y-3 max-w-md mx-auto">
+              {valueBullets.map((bullet, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-3 text-white/90 animate-fade-in"
+                  style={{ animationDelay: `${0.3 + index * 0.1}s` }}
+                >
+                  <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                    <Check className="w-3 h-3 text-white" />
+                  </div>
+                  <span className="text-sm font-medium">{bullet}</span>
+                </div>
+              ))}
+            </div>
           )}
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
