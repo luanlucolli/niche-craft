@@ -96,11 +96,16 @@ export default function Hero({
             </p>
           )}
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             {primaryButton && (
               <Button
                 asChild
-                className="btn-hero group"
+                className={cn(
+                  "group",
+                  primaryButton.type === 'whatsapp' 
+                    ? "bg-[#25D366] hover:bg-[#128C7E] text-white border-0" 
+                    : "btn-hero"
+                )}
               >
                 <a 
                   href={getWhatsAppUrl(primaryButton)}

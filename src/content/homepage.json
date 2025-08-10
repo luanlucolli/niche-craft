@@ -6,9 +6,9 @@
       "variant": "centered",
       "separator": "curve",
       "props": {
-        "title": "Landing pages focadas em conversão via WhatsApp",
+        "title": "Landing pages que realmente convertem",
         "subtitle": "Entrega enxuta e bem-feita",
-        "description": "Páginas leves, responsivas e com SEO on-page, feitas para gerar contato imediato no WhatsApp. Prazos realistas para um trabalho sólido.",
+        "description": "Páginas leves, responsivas e com SEO on-page, feitas para gerar contato qualificado. Prazos realistas para um trabalho sólido.",
         "primaryButton": {
           "text": "Falar no WhatsApp",
           "type": "whatsapp",
@@ -233,7 +233,7 @@
       "props": {
         "title": "Pronto para começar do jeito certo?",
         "subtitle": "Agenda por ordem de chegada",
-        "description": "Vamos publicar sua landing page com foco em conversão via WhatsApp e base técnica bem feita.",
+        "description": "Vamos publicar sua landing page com foco em conversão e base técnica bem feita.",
         "button": {
           "text": "Iniciar conversa no WhatsApp",
           "type": "whatsapp",

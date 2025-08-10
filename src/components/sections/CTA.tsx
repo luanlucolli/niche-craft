@@ -86,7 +86,10 @@ export default function CTA({
     <Button
       asChild
       className={cn(
-        "bg-white text-primary-600 hover:bg-white/90 px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group hover:scale-105 focus:scale-105 focus:ring-4 focus:ring-white/30",
+        "px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group hover:scale-105 focus:scale-105 focus:ring-4 focus:ring-white/30",
+        button?.type === 'whatsapp'
+          ? "bg-[#25D366] hover:bg-[#128C7E] text-white"
+          : "bg-white text-primary-600 hover:bg-white/90",
         className
       )}
     >
@@ -118,79 +121,57 @@ export default function CTA({
           {/* Gradiente de fundo suave */}
           <div className="absolute inset-0 bg-gradient-to-br from-primary-600/20 via-transparent to-primary-800/20 rounded-3xl" />
           
-          <div className={cn(
-            'relative text-center animate-fade-in-up',
-            variant === 'centered' && 'max-w-4xl mx-auto',
-            variant === 'split' && 'grid lg:grid-cols-2 gap-12 items-center text-left',
-            variant === 'minimal' && 'max-w-2xl mx-auto'
-          )}>
-            <div>
-              {subtitle && (
-                <p className="text-white/80 font-semibold text-lg mb-4">
-                  {subtitle}
-                </p>
-              )}
-              
-              <Heading 
-                level={2} 
-                size="lg" 
-                className={cn(
-                  'text-white mb-6',
-                  variant === 'centered' && 'text-center',
-                  variant !== 'centered' && 'text-left'
-                )}
-              >
-                {title}
-              </Heading>
-              
-              {description && (
-                <p className={cn(
-                  'text-white/90 text-lg leading-relaxed mb-8',
-                  variant === 'centered' && 'text-center',
-                  variant !== 'centered' && 'text-left'
-                )}>
-                  {description}
-                </p>
-              )}
+          <div className="relative text-center max-w-4xl mx-auto animate-fade-in-up">
+            {subtitle && (
+              <p className="text-white/80 font-semibold text-lg mb-4">
+                {subtitle}
+              </p>
+            )}
+            
+            <Heading 
+              level={2} 
+              size="lg" 
+              className="text-white mb-6 text-center"
+            >
+              {title}
+            </Heading>
+            
+            {description && (
+              <p className="text-white/90 text-lg leading-relaxed mb-8 text-center max-w-2xl mx-auto">
+                {description}
+              </p>
+            )}
 
-              {/* Badges de confiança */}
-              <div className="flex flex-wrap justify-center gap-4 mb-8">
-                {trustBadges.map((badge, index) => {
-                  const IconComponent = badge.icon;
-                  return (
-                    <div
-                      key={index}
-                      className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-white/90 text-sm animate-fade-in"
-                      style={{ animationDelay: `${0.3 + index * 0.1}s` }}
-                    >
-                      <IconComponent className="w-4 h-4" />
-                      <span>{badge.text}</span>
-                    </div>
-                  );
-                })}
-              </div>
-              
-              {button && (
-                <div className={cn(
-                  'mb-8',
-                  variant === 'centered' && 'flex justify-center',
-                  variant !== 'centered' && 'flex justify-start'
-                )}>
-                  {renderButton()}
-                </div>
-              )}
+            {/* Badges de confiança */}
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
+              {trustBadges.map((badge, index) => {
+                const IconComponent = badge.icon;
+                return (
+                  <div
+                    key={index}
+                    className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-white/90 text-sm animate-fade-in"
+                    style={{ animationDelay: `${0.3 + index * 0.1}s` }}
+                  >
+                    <IconComponent className="w-4 h-4" />
+                    <span>{badge.text}</span>
+                  </div>
+                );
+              })}
             </div>
             
+            {button && (
+              <div className="mb-8 flex justify-center">
+                {renderButton()}
+              </div>
+            )}
+            
             {features && (
-              <div className={cn(
-                variant === 'split' && 'lg:justify-self-end',
-                variant !== 'split' && 'max-w-md mx-auto'
-              )}>
-                <ul className="space-y-3" role="status" aria-live="polite">
+              <div className="max-w-md mx-auto">
+                <ul className="space-y-3 text-center" role="status" aria-live="polite">
                   {features.map((feature, index) => (
                     <li
                       key={index}
-                      className="flex items-center gap-3 text-white/90 animate-fade-in"
+                      className="flex items-center justify-center gap-3 text-white/90 animate-fade-in"
                       style={{ animationDelay: `${0.5 + index * 0.1}s` }}
                     >
                       <Check className="w-5 h-5 text-white flex-shrink-0" />

@@ -156,7 +156,9 @@ export default function Pricing({
             asChild
             className={cn(
               'w-full transition-all duration-300 group/btn',
-              plan.popular 
+              plan.button?.type === 'whatsapp'
+                ? 'bg-[#25D366] hover:bg-[#128C7E] text-white border-0'
+                : plan.popular 
                 ? 'btn-hero' 
                 : 'btn-secondary hover:bg-primary-500 hover:text-white',
               isHovered && 'transform scale-105 shadow-lg'
@@ -215,19 +217,6 @@ export default function Pricing({
         plans.length >= 3 && 'md:grid-cols-2 lg:grid-cols-3'
       )}>
         {plans.map((plan, index) => renderPlan(plan, index))}
-      </div>
-
-      {/* Garantia e segurança */}
-      <div className="text-center mt-12 animate-fade-in" style={{ animationDelay: '0.8s' }}>
-        <div className="inline-flex items-center gap-4 bg-green-50 border border-green-200 rounded-2xl px-8 py-4">
-          <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
-            <Check className="w-6 h-6 text-white" />
-          </div>
-          <div className="text-left">
-            <div className="font-bold text-green-800">Garantia de 30 dias</div>
-            <div className="text-green-600 text-sm">Se não ficar satisfeito, devolvemos 100% do seu dinheiro</div>
-          </div>
-        </div>
       </div>
     </Section>
   );
