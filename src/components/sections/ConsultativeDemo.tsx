@@ -378,7 +378,7 @@ export default function ConsultativeDemo({
           </div>
 
           <div className="text-center">
-            {renderCTAs()}
+            {renderCTASection()}
           </div>
         </div>
 
@@ -466,7 +466,7 @@ export default function ConsultativeDemo({
           </div>
 
           <div className="mt-8">
-            {renderCTAs()}
+            {renderCTASection()}
           </div>
 
           {image && (
