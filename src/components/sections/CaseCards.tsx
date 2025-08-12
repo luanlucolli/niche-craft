@@ -16,6 +16,9 @@ interface Case {
 interface CaseCardsProps {
   variant?: 'cards' | 'list';
   separator?: 'none' | 'wave' | 'curve' | 'diagonal';
+  tone?: 'soft' | 'solid';
+  accent?: 'primary' | 'secondary';
+  separatorColor?: 'primary' | 'secondary' | 'muted';
   title: string;
   subtitle?: string;
   cases: Case[];
@@ -25,6 +28,9 @@ interface CaseCardsProps {
 export default function CaseCards({
   variant = 'cards',
   separator = 'none',
+  tone = 'soft',
+  accent = 'primary',
+  separatorColor = 'primary',
   title,
   subtitle,
   cases,
@@ -34,6 +40,9 @@ export default function CaseCards({
     <Section 
       separator={separator}
       background="default"
+      tone={tone}
+      accent={accent}
+      separatorColor={separatorColor}
       paddingY="lg"
     >
       <div className="text-center mb-12">
@@ -60,7 +69,12 @@ export default function CaseCards({
           >
             {/* Header */}
             <div className="flex items-center justify-between mb-4">
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-700">
+              <span className={cn(
+                "inline-flex items-center px-3 py-1 rounded-full text-sm font-medium",
+                accent === 'primary'
+                  ? 'bg-brand-primary-100 text-brand-primary-700'
+                  : 'bg-brand-secondary-100 text-brand-secondary-700'
+              )}>
                 {caseItem.segmento}
               </span>
               
@@ -86,7 +100,12 @@ export default function CaseCards({
             
             {/* Intervenção */}
             <div className="mb-4">
-              <h4 className="font-semibold text-blue-600 mb-2 text-sm">O QUE FIZEMOS</h4>
+              <h4 className={cn(
+                "font-semibold mb-2 text-sm",
+                accent === 'primary' ? 'text-brand-primary-600' : 'text-brand-secondary-600'
+              )}>
+                O QUE FIZEMOS
+              </h4>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 {caseItem.intervencao}
               </p>

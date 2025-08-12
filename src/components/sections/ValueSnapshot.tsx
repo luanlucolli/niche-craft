@@ -14,6 +14,9 @@ interface KPI {
 interface ValueSnapshotProps {
   variant?: 'grid' | 'row';
   separator?: 'none' | 'wave' | 'curve' | 'diagonal';
+  tone?: 'soft' | 'solid';
+  accent?: 'primary' | 'secondary';
+  separatorColor?: 'primary' | 'secondary' | 'muted';
   title: string;
   subtitle?: string;
   kpis: KPI[];
@@ -28,6 +31,9 @@ const getKPIIcon = (index: number) => {
 export default function ValueSnapshot({
   variant = 'grid',
   separator = 'none',
+  tone = 'soft',
+  accent = 'primary',
+  separatorColor = 'primary',
   title,
   subtitle,
   kpis,
@@ -37,6 +43,9 @@ export default function ValueSnapshot({
     <Section 
       separator={separator}
       background="muted"
+      tone={tone}
+      accent={accent}
+      separatorColor={separatorColor}
       paddingY="lg"
     >
       <div className="text-center mb-12">
@@ -65,7 +74,12 @@ export default function ValueSnapshot({
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center group-hover:bg-primary-500 group-hover:text-white transition-all duration-300">
+                <div className={cn(
+                  "w-12 h-12 rounded-xl flex items-center justify-center group-hover:text-white transition-all duration-300",
+                  accent === 'primary'
+                    ? 'bg-brand-primary-100 group-hover:bg-brand-primary-500'
+                    : 'bg-brand-secondary-100 group-hover:bg-brand-secondary-500'
+                )}>
                   <IconComponent className="w-6 h-6" />
                 </div>
                 
@@ -76,7 +90,12 @@ export default function ValueSnapshot({
                 )}
               </div>
               
-              <div className="text-3xl font-bold text-foreground mb-1 group-hover:text-primary-600 transition-colors">
+              <div className={cn(
+                "text-3xl font-bold mb-1 transition-colors",
+                accent === 'primary'
+                  ? 'text-foreground group-hover:text-brand-primary-600'
+                  : 'text-foreground group-hover:text-brand-secondary-600'
+              )}>
                 {kpi.value}
               </div>
               
