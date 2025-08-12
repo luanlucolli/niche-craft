@@ -142,9 +142,9 @@ export default function ConsultativeDemo({
                   : "bg-gradient-to-r from-primary via-primary-600 to-secondary hover:from-primary-700 hover:via-primary-700 hover:to-secondary-600 text-white border-0"
               )}
             >
-              {ctaPrimary.type === "whatsapp" && <Icons.MessageCircle className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:w-5 lg:w-6 lg:h-6 mr-1.5 sm:mr-2 md:mr-3" />}
+              {ctaPrimary.type === "whatsapp" && <Icons.MessageCircle className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 mr-1.5 sm:mr-2 md:mr-3" />}
               <span>{ctaPrimary.text}</span>
-              <Icons.ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:w-5 ml-1.5 sm:ml-2 md:ml-3" />
+              <Icons.ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 ml-1.5 sm:ml-2 md:ml-3" />
             </Button>
           </div>
         </div>
