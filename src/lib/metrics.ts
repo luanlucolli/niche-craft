@@ -36,6 +36,10 @@ export const metrics = {
   whatsappClick: (location: string, plan?: string) =>
     trackEvent('whatsapp_click', { location, plan }),
 
+  // Phone clicks
+  phoneClick: (location: string) =>
+    trackEvent('phone_click', { location }),
+
   // Calculator usage
   calculatorUsed: (visitas: number, taxa: number, ticket: number, leads: number, receita: number) =>
     trackEvent('calculator_used', { visitas, taxa, ticket, leads_estimados: leads, receita_estimada: receita }),
