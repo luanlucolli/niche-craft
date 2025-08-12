@@ -104,8 +104,6 @@ export default {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-hero': 'linear-gradient(135deg, hsl(var(--primary-600)), hsl(var(--secondary-500)))',
 				'gradient-feature': 'linear-gradient(135deg, hsl(var(--primary-50)), hsl(var(--secondary-50)))',
-				'gradient-landingville': 'linear-gradient(135deg, hsl(204 59% 41%), hsl(88 35% 56%))',
-				'gradient-steel-moss': 'linear-gradient(to right, hsl(204 65% 35%), hsl(204 59% 41%), hsl(88 35% 56%))',
 			},
 			keyframes: {
 				'fade-in': {

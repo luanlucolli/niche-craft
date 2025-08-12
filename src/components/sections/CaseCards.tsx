@@ -35,14 +35,13 @@ export default function CaseCards({
       separator={separator}
       background="default"
       paddingY="lg"
-      className="bg-gradient-to-br from-white via-primary-50 to-secondary-50"
     >
       <div className="text-center mb-12">
-        <Heading level={2} size="xl" centered className="mb-4 text-primary-800">
+        <Heading level={2} size="xl" centered className="mb-4">
           {title}
         </Heading>
         {subtitle && (
-          <p className="text-lead max-w-3xl mx-auto text-primary-700">
+          <p className="text-lead max-w-3xl mx-auto">
             {subtitle}
           </p>
         )}
@@ -56,17 +55,17 @@ export default function CaseCards({
         {cases.map((caseItem, index) => (
           <div
             key={index}
-            className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-primary-200/50 hover:shadow-xl transition-all duration-300 animate-fade-in-up group hover:scale-105"
+            className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 animate-fade-in-up group"
             style={{ animationDelay: `${index * 0.1}s` }}
           >
             {/* Header */}
             <div className="flex items-center justify-between mb-4">
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-primary-100 to-primary-50 text-primary-700 border border-primary-200">
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-700">
                 {caseItem.segmento}
               </span>
               
               {caseItem.type === 'estimated' && (
-                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-amber-100 to-amber-50 text-amber-700 border border-amber-300">
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-amber-100 text-amber-700 border border-amber-200">
                   Estimado
                 </span>
               )}
@@ -75,38 +74,38 @@ export default function CaseCards({
             {/* Problema */}
             <div className="mb-4">
               <h4 className="font-semibold text-red-600 mb-2 text-sm">PROBLEMA</h4>
-              <p className="text-primary-600 text-sm leading-relaxed">
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 {caseItem.problema}
               </p>
             </div>
             
             {/* Seta */}
             <div className="flex justify-center mb-4">
-              <ArrowRight className="w-5 h-5 text-primary-400" />
+              <ArrowRight className="w-5 h-5 text-muted-foreground" />
             </div>
             
             {/* Intervenção */}
             <div className="mb-4">
-              <h4 className="font-semibold text-primary-600 mb-2 text-sm">O QUE FIZEMOS</h4>
-              <p className="text-primary-600 text-sm leading-relaxed">
+              <h4 className="font-semibold text-blue-600 mb-2 text-sm">O QUE FIZEMOS</h4>
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 {caseItem.intervencao}
               </p>
             </div>
             
             {/* Resultado */}
             <div className="mb-4">
-              <h4 className="font-semibold text-secondary-600 mb-2 text-sm flex items-center gap-2">
+              <h4 className="font-semibold text-green-600 mb-2 text-sm flex items-center gap-2">
                 <TrendingUp className="w-4 h-4" />
                 RESULTADO
               </h4>
-              <p className="text-primary-800 font-medium text-sm leading-relaxed">
+              <p className="text-foreground font-medium text-sm leading-relaxed">
                 {caseItem.resultado}
               </p>
             </div>
             
             {/* Tempo */}
-            <div className="pt-4 border-t border-primary-200">
-              <div className="flex items-center gap-2 text-sm text-primary-500">
+            <div className="pt-4 border-t border-gray-100">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Clock className="w-4 h-4" />
                 <span>Entregue em {caseItem.tempo}</span>
               </div>
@@ -117,7 +116,7 @@ export default function CaseCards({
       
       {disclaimer && (
         <div className="text-center mt-8 max-w-3xl mx-auto">
-          <p className="text-sm text-primary-600 bg-gradient-to-r from-amber-50 to-orange-50 rounded-lg p-4 border border-amber-300 shadow-sm">
+          <p className="text-sm text-muted-foreground bg-amber-50 rounded-lg p-4 border border-amber-200">
             ⚠️ {disclaimer}
           </p>
         </div>
