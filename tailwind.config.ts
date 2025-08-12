@@ -102,7 +102,7 @@ export default {
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'gradient-hero': 'linear-gradient(135deg, hsl(var(--primary-600)), hsl(var(--secondary-500)))',
+				'gradient-hero': 'linear-gradient(135deg, hsl(var(--primary-600)), hsl(var(--secondary-600)))',
 				'gradient-feature': 'linear-gradient(135deg, hsl(var(--primary-50)), hsl(var(--secondary-50)))',
 			},
 			keyframes: {
