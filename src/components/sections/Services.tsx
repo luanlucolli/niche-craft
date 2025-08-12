@@ -42,7 +42,7 @@ export default function Services({
       'aspect-[16/10] sm:aspect-[4/3] lg:aspect-[3/2]';
 
     const baseFrame =
-      'relative rounded-xl ring-1 ring-border/50 bg-transparent overflow-hidden flex items-center justify-center';
+      'relative rounded-xl ring-1 ring-border/50 bg-muted/40 overflow-hidden flex items-center justify-center';
 
     // Em grid/stack a altura antiga cortava as imagens; trocamos por aspect e contain.
     const variantClasses = {
