@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
@@ -42,7 +41,7 @@
     --secondary-800: 95 50% 38%;
     --secondary-900: 95 55% 32%;
     
-    --muted: 0 0% 98%;
+    --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
@@ -130,15 +129,6 @@
   
   .btn-ghost {
     @apply inline-flex items-center justify-center gap-2 rounded-lg px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 text-sm sm:text-base font-medium text-foreground transition-all duration-300 hover:bg-muted focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-background;
-  }
-  
-  /* Background Gradients */
-  .bg-brand-gradient {
-    @apply bg-gradient-to-br from-primary-500 via-primary-600 to-secondary-500;
-  }
-  
-  .bg-brand-gradient-light {
-    @apply bg-gradient-to-br from-primary-50 via-primary-100 to-secondary-50;
   }
   
   /* Section Separators - Responsive */

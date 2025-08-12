@@ -36,7 +36,7 @@ export default function ValueSnapshot({
   return (
     <Section 
       separator={separator}
-      background="default"
+      background="muted"
       paddingY="lg"
     >
       <div className="text-center mb-12">
@@ -61,11 +61,11 @@ export default function ValueSnapshot({
           return (
             <div
               key={index}
-              className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 animate-fade-in-up group hover:border-primary-200"
+              className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 animate-fade-in-up group"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-100 to-secondary-100 flex items-center justify-center group-hover:from-primary-500 group-hover:to-secondary-500 group-hover:text-white transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center group-hover:bg-primary-500 group-hover:text-white transition-all duration-300">
                   <IconComponent className="w-6 h-6" />
                 </div>
                 
@@ -96,7 +96,7 @@ export default function ValueSnapshot({
       
       {note && (
         <div className="text-center max-w-3xl mx-auto">
-          <p className="text-sm text-muted-foreground bg-primary-50 rounded-lg p-4 border border-primary-200">
+          <p className="text-sm text-muted-foreground bg-white/60 rounded-lg p-4 border border-gray-200">
             💡 {note}
           </p>
         </div>

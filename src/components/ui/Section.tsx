@@ -34,11 +34,11 @@ export default function Section({
           'py-16 sm:py-20 md:py-24 lg:py-32': paddingY === 'lg',
           'py-20 sm:py-24 md:py-32 lg:py-40': paddingY === 'xl',
           
-          // Background - Simplified for consistency
-          'bg-white': background === 'default',
-          'bg-muted': background === 'muted',
-          'bg-brand-gradient': background === 'gradient',
-          'bg-brand-gradient text-white': background === 'primary',
+          // Background
+          'bg-background': background === 'default',
+          'bg-muted/50': background === 'muted',
+          'bg-gradient-feature': background === 'gradient',
+          'bg-gradient-hero text-white': background === 'primary',
           
           // Separators
           'separator-wave': separator === 'wave',
