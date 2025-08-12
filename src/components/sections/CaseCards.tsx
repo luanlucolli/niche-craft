@@ -33,7 +33,7 @@ export default function CaseCards({
   return (
     <Section 
       separator={separator}
-      background="default"
+      background="muted"
       paddingY="lg"
     >
       <div className="text-center mb-12">
@@ -55,12 +55,12 @@ export default function CaseCards({
         {cases.map((caseItem, index) => (
           <div
             key={index}
-            className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 animate-fade-in-up group"
+            className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-primary-200 transition-all duration-300 animate-fade-in-up group"
             style={{ animationDelay: `${index * 0.1}s` }}
           >
             {/* Header */}
             <div className="flex items-center justify-between mb-4">
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-700">
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-primary-100 to-secondary-100 text-primary-700">
                 {caseItem.segmento}
               </span>
               
@@ -81,12 +81,12 @@ export default function CaseCards({
             
             {/* Seta */}
             <div className="flex justify-center mb-4">
-              <ArrowRight className="w-5 h-5 text-muted-foreground" />
+              <ArrowRight className="w-5 h-5 text-primary-400 group-hover:text-primary-600 transition-colors" />
             </div>
             
             {/* Intervenção */}
             <div className="mb-4">
-              <h4 className="font-semibold text-blue-600 mb-2 text-sm">O QUE FIZEMOS</h4>
+              <h4 className="font-semibold text-primary-600 mb-2 text-sm">O QUE FIZEMOS</h4>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 {caseItem.intervencao}
               </p>
@@ -94,7 +94,7 @@ export default function CaseCards({
             
             {/* Resultado */}
             <div className="mb-4">
-              <h4 className="font-semibold text-green-600 mb-2 text-sm flex items-center gap-2">
+              <h4 className="font-semibold text-secondary-600 mb-2 text-sm flex items-center gap-2">
                 <TrendingUp className="w-4 h-4" />
                 RESULTADO
               </h4>
