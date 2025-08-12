@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import { formatWhatsAppUrl } from '@/lib/forms';
 import { metrics } from '@/lib/metrics';
+import ConsultativeDemoMobile from './ConsultativeDemoMobile';
 
 type PainPoint = { 
   icon?: string; 
@@ -50,7 +51,24 @@ interface ConsultativeDemoProps {
   separatorColor?: "auto" | "primary" | "secondary" | "muted";
 }
 
-export default function ConsultativeDemo({
+export default function ConsultativeDemo(props: ConsultativeDemoProps) {
+  // Use mobile component for small screens
+  return (
+    <>
+      {/* Mobile Layout */}
+      <div className="block lg:hidden">
+        <ConsultativeDemoMobile {...props} />
+      </div>
+      
+      {/* Desktop Layout */}
+      <div className="hidden lg:block">
+        <DesktopConsultativeDemo {...props} />
+      </div>
+    </>
+  );
+}
+
+function DesktopConsultativeDemo({
   title,
   subtitle,
   pains,
@@ -168,7 +186,7 @@ export default function ConsultativeDemo({
                   : "bg-gradient-to-r from-brand-primary via-brand-primary-600 to-brand-secondary hover:from-brand-primary-700 hover:via-brand-primary-700 hover:to-brand-secondary-600 text-white border-0"
               )}
             >
-              {ctaPrimary.type === "whatsapp" && <Icons.MessageCircle className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 mr-1.5 sm:mr-2 md:mr-3" />}
+              {ctaPrimary.type === "whatsapp" && <Icons.MessageCircle className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:w-5 lg:w-6 lg:h-6 mr-1.5 sm:mr-2 md:mr-3" />}
               <span>{ctaPrimary.text}</span>
               <Icons.ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 ml-1.5 sm:ml-2 md:ml-3" />
             </Button>
@@ -188,10 +206,9 @@ export default function ConsultativeDemo({
         grid="asym-right"
         paddingY="lg"
       >
-        {/* Conteúdo principal - coluna esquerda no desktop, pilha no mobile */}
-        <div className="lg:col-span-7 space-y-6 md:space-y-8">
-          {/* Header */}
-          <div className="text-center lg:text-left">
+        {/* Content */}
+        <div className="lg:col-span-7 space-y-8">
+          <div className="text-left">
             {badge && (
               <Badge 
                 className="mb-4 bg-gradient-to-r from-brand-primary/10 to-brand-secondary/10 text-brand-primary border-brand-primary/20"
@@ -207,34 +224,33 @@ export default function ConsultativeDemo({
             </Heading>
             
             {subtitle && (
-              <p className="text-base md:text-lg leading-7 text-muted-foreground max-w-2xl mx-auto lg:mx-0">
+              <p className="text-lg leading-7 text-muted-foreground max-w-2xl">
                 {subtitle}
               </p>
             )}
           </div>
 
-          {/* Problemas - Cards empilhados no mobile */}
-          <div className="space-y-4">
+          {/* Problems */}
+          <div className="space-y-6">
             <h3 className="text-lg font-semibold text-red-600 flex items-center gap-2">
               <Icons.AlertTriangle className="w-5 h-5" />
               Problemas comuns
             </h3>
             
-            <div className="grid gap-3 sm:gap-4">
+            <div className="grid gap-4">
               {pains.map((pain, index) => {
                 const Icon = pain.icon ? getIcon(pain.icon) : Icons.AlertCircle;
                 return (
                   <div
                     key={index}
-                    className="bg-white/80 backdrop-blur-sm rounded-lg p-4 md:p-5 border border-red-100 hover:border-red-200 transition-all duration-300 hover:shadow-md animate-fade-in-up"
-                    style={{ animationDelay: `${index * 0.1}s` }}
+                    className="bg-white/80 backdrop-blur-sm rounded-lg p-5 border border-red-100 hover:border-red-200 transition-all duration-300 hover:shadow-md"
                   >
                     <div className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-red-100 to-red-50 flex items-center justify-center">
-                        <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-red-600" />
+                      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-red-100 to-red-50 flex items-center justify-center">
+                        <Icon className="w-6 h-6 text-red-600" />
                       </div>
-                      <div className="flex-1 min-w-0">
-                        <h4 className="font-semibold text-ink mb-1 text-sm sm:text-base leading-tight">
+                      <div className="flex-1">
+                        <h4 className="font-semibold text-ink mb-1">
                           {pain.title}
                         </h4>
                         <p className="text-muted-foreground text-sm leading-relaxed">
@@ -248,56 +264,52 @@ export default function ConsultativeDemo({
             </div>
           </div>
 
-          {/* Processo - Lista numerada no mobile */}
-          <div className="space-y-4">
+          {/* Process */}
+          <div className="space-y-6">
             <h3 className="text-lg font-semibold text-brand-primary flex items-center gap-2">
               <Icons.CheckCircle className="w-5 h-5" />
               Nossa metodologia
             </h3>
             
-            <div className="space-y-3">
-              {steps.map((step, index) => {
-                const Icon = step.icon ? getIcon(step.icon) : Icons.ArrowRight;
-                return (
-                  <div
-                    key={index}
-                    className="bg-white/60 backdrop-blur-sm rounded-lg p-4 md:p-5 border border-brand-primary/10 hover:border-brand-primary/20 transition-all duration-300 animate-fade-in-up"
-                    style={{ animationDelay: `${(index + pains.length) * 0.1}s` }}
-                  >
-                    <div className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-brand-primary to-brand-secondary text-white flex items-center justify-center font-bold text-sm">
-                        {index + 1}
+            <div className="space-y-4">
+              {steps.map((step, index) => (
+                <div
+                  key={index}
+                  className="bg-white/60 backdrop-blur-sm rounded-lg p-5 border border-brand-primary/10 hover:border-brand-primary/20 transition-all duration-300"
+                >
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-brand-primary to-brand-secondary text-white flex items-center justify-center font-bold">
+                      {index + 1}
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-2">
+                        <h4 className="font-semibold text-ink">
+                          {step.title}
+                        </h4>
+                        {step.duration && (
+                          <Badge 
+                            variant="secondary" 
+                            className="bg-green-100 text-green-700 border-green-200 text-xs"
+                          >
+                            {step.duration}
+                          </Badge>
+                        )}
                       </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-2">
-                          <h4 className="font-semibold text-ink text-sm sm:text-base">
-                            {step.title}
-                          </h4>
-                          {step.duration && (
-                            <Badge 
-                              variant="secondary" 
-                              className="bg-green-100 text-green-700 border-green-200 text-xs self-start"
-                            >
-                              {step.duration}
-                            </Badge>
-                          )}
-                        </div>
-                        <p className="text-muted-foreground text-sm leading-relaxed">
-                          {step.description}
-                        </p>
-                      </div>
+                      <p className="text-muted-foreground text-sm leading-relaxed">
+                        {step.description}
+                      </p>
                     </div>
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* CTA Section - coluna direita no desktop, fim da pilha no mobile */}
+        {/* CTA Section */}
         <div className="lg:col-span-5 flex items-center">
           <div className="w-full">
-            <div className="bg-white/90 backdrop-blur-sm rounded-xl md:rounded-2xl p-6 md:p-8 border border-white/50 shadow-lg">
+            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 border border-white/50 shadow-lg">
               {highlights.length > 0 && (
                 <div className="space-y-3 mb-6">
                   {highlights.map((highlight, index) => (
@@ -313,7 +325,7 @@ export default function ConsultativeDemo({
                 <Button
                   onClick={handlePrimaryClick}
                   className={cn(
-                    "w-full h-12 md:h-14 text-base md:text-lg font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105",
+                    "w-full h-14 text-lg font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105",
                     ctaPrimary.type === "whatsapp" 
                       ? "bg-gradient-to-r from-[#25D366] to-[#20BA5A] hover:from-[#20BA5A] hover:to-[#1DA851] text-white border-0" 
                       : "bg-gradient-brand hover:opacity-90 text-white border-0"
@@ -330,7 +342,7 @@ export default function ConsultativeDemo({
                   <Button
                     variant="outline"
                     onClick={handleSecondaryClick}
-                    className="w-full h-10 md:h-12 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white"
+                    className="w-full h-12 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white"
                   >
                     {ctaSecondary.text}
                   </Button>
@@ -445,6 +457,7 @@ export default function ConsultativeDemo({
     );
   }
 
+  
   return (
     <Section 
       separator={separator} 

@@ -1,7 +1,6 @@
 
 import { cn } from '@/lib/utils';
 import { ReactNode } from 'react';
-import Container from './Container';
 
 type SectionTone = 'surface-0' | 'surface-1' | 'surface-2' | 'solid-primary' | 'solid-secondary' | 'gradient' | 'gradient-soft';
 type SectionPattern = 'none' | 'dots' | 'grid';
@@ -17,13 +16,13 @@ interface SectionProps {
   paddingY?: 'sm' | 'md' | 'lg' | 'xl';
   id?: string;
   
-  // Novas props do sistema de tema
+  // Sistema de tema
   tone?: SectionTone;
   pattern?: SectionPattern;
   width?: SectionWidth;
   grid?: SectionGrid;
   
-  // Props legadas (mantendo compatibilidade)
+  // Props legadas (compatibilidade)
   background?: 'default' | 'muted' | 'gradient' | 'primary';
   accent?: 'primary' | 'secondary';
 }
@@ -40,15 +39,14 @@ export default function Section({
   pattern = 'none',
   width = 'default',
   grid = 'none',
-  // Props legadas
   background,
   accent = 'primary',
 }: SectionProps) {
-  // Mapear props legadas para o novo sistema se presentes
+  // Mapear props legadas
   const effectiveTone = background ? mapLegacyBackground(background, accent) : tone;
   const effectiveWidth = containerSize !== 'normal' ? mapLegacyContainerSize(containerSize) : width;
   
-  // Determinar cor do separador automaticamente
+  // Cor do separador
   const getSeparatorColor = () => {
     if (separatorColor === 'auto') {
       if (effectiveTone.includes('solid') || effectiveTone === 'gradient') {
@@ -64,7 +62,7 @@ export default function Section({
     }[separatorColor] || 'text-brand-primary';
   };
   
-  // Mapear tone para classes
+  // Classes de tema
   const getToneClasses = () => {
     switch (effectiveTone) {
       case 'surface-0':
@@ -86,7 +84,7 @@ export default function Section({
     }
   };
   
-  // Mapear width para classes de container
+  // Classes de largura
   const getWidthClasses = () => {
     switch (effectiveWidth) {
       case 'wide':
@@ -98,7 +96,7 @@ export default function Section({
     }
   };
   
-  // Mapear grid para classes
+  // Classes de grid
   const getGridClasses = () => {
     switch (grid) {
       case 'grid-12':
@@ -118,23 +116,16 @@ export default function Section({
       className={cn(
         'relative w-full',
         {
-          // Responsive padding
           'py-8 sm:py-12 md:py-16': paddingY === 'sm',
           'py-12 sm:py-16 md:py-20': paddingY === 'md',
           'py-16 sm:py-20 md:py-24 lg:py-32': paddingY === 'lg',
           'py-20 sm:py-24 md:py-32 lg:py-40': paddingY === 'xl',
-          
-          // Separadores
-          'separator-wave': separator === 'wave',
-          'separator-curve': separator === 'curve',
-          'separator-diagonal': separator === 'diagonal',
         },
         getToneClasses(),
         getSeparatorColor(),
         className
       )}
     >
-      {/* Pattern overlay */}
       {pattern !== 'none' && (
         <div 
           className={cn(
