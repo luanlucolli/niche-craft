@@ -33,15 +33,15 @@ export default function CaseCards({
   return (
     <Section 
       separator={separator}
-      background="default"
+      background="gradient"
       paddingY="lg"
     >
       <div className="text-center mb-12">
-        <Heading level={2} size="xl" centered className="mb-4">
+        <Heading level={2} size="xl" centered className="mb-4 text-white">
           {title}
         </Heading>
         {subtitle && (
-          <p className="text-lead max-w-3xl mx-auto">
+          <p className="text-lead max-w-3xl mx-auto text-white/90">
             {subtitle}
           </p>
         )}
@@ -55,12 +55,12 @@ export default function CaseCards({
         {cases.map((caseItem, index) => (
           <div
             key={index}
-            className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 animate-fade-in-up group"
+            className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-white/20 hover:shadow-2xl hover:bg-white transition-all duration-300 animate-fade-in-up group"
             style={{ animationDelay: `${index * 0.1}s` }}
           >
             {/* Header */}
             <div className="flex items-center justify-between mb-4">
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-700">
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-primary/10 to-secondary/10 text-primary border border-primary/20">
                 {caseItem.segmento}
               </span>
               
@@ -81,12 +81,12 @@ export default function CaseCards({
             
             {/* Seta */}
             <div className="flex justify-center mb-4">
-              <ArrowRight className="w-5 h-5 text-muted-foreground" />
+              <ArrowRight className="w-5 h-5 text-primary/60" />
             </div>
             
             {/* Intervenção */}
             <div className="mb-4">
-              <h4 className="font-semibold text-blue-600 mb-2 text-sm">O QUE FIZEMOS</h4>
+              <h4 className="font-semibold text-primary mb-2 text-sm">O QUE FIZEMOS</h4>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 {caseItem.intervencao}
               </p>
@@ -94,7 +94,7 @@ export default function CaseCards({
             
             {/* Resultado */}
             <div className="mb-4">
-              <h4 className="font-semibold text-green-600 mb-2 text-sm flex items-center gap-2">
+              <h4 className="font-semibold text-secondary mb-2 text-sm flex items-center gap-2">
                 <TrendingUp className="w-4 h-4" />
                 RESULTADO
               </h4>
@@ -116,7 +116,7 @@ export default function CaseCards({
       
       {disclaimer && (
         <div className="text-center mt-8 max-w-3xl mx-auto">
-          <p className="text-sm text-muted-foreground bg-amber-50 rounded-lg p-4 border border-amber-200">
+          <p className="text-sm text-white/80 bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
             ⚠️ {disclaimer}
           </p>
         </div>
