@@ -41,9 +41,9 @@ export default function SiteHeader({ variant = 'default', sticky = true }: SiteH
       className={`w-full z-50 transition-all duration-300 ${
         sticky ? 'sticky top-0' : 'relative'
       } ${
-        variant === 'transparent' ? 'bg-surface-0/95 backdrop-blur-sm border-b border-white/20' :
-        variant === 'solid' ? 'bg-surface-0 border-b border-gray-200 shadow-sm' :
-        'bg-surface-0/98 backdrop-blur-md border-b border-gray-100'
+        variant === 'transparent' ? 'bg-white/95 backdrop-blur-sm border-b border-white/20' :
+        variant === 'solid' ? 'bg-white border-b border-gray-200 shadow-sm' :
+        'bg-white/98 backdrop-blur-md border-b border-gray-100'
       }`}
     >
       <Container>
@@ -51,10 +51,10 @@ export default function SiteHeader({ variant = 'default', sticky = true }: SiteH
           {/* Logo */}
           <div className="flex-shrink-0">
             <a href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-brand rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-brand-primary to-brand-secondary rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">LP</span>
               </div>
-              <span className="text-xl font-bold text-ink">{siteData.title}</span>
+              <span className="text-xl font-bold text-foreground">{siteData.title}</span>
             </a>
           </div>
 
@@ -64,7 +64,7 @@ export default function SiteHeader({ variant = 'default', sticky = true }: SiteH
               <a
                 key={item.name}
                 href={item.href}
-                className="text-muted-foreground hover:text-brand-primary transition-colors duration-200 font-medium focus:outline-none focus:ring-2 focus:ring-brand-primary/50 focus:ring-offset-2 rounded-md px-2 py-1"
+                className="text-muted-foreground hover:text-brand-primary transition-colors duration-200 font-medium"
               >
                 {item.name}
               </a>
@@ -77,14 +77,14 @@ export default function SiteHeader({ variant = 'default', sticky = true }: SiteH
               variant="outline"
               size="sm"
               onClick={handleCallClick}
-              className="border-brand-primary/20 text-brand-primary hover:bg-brand-primary/5 hover:border-brand-primary/30 focus:ring-brand-primary/50"
+              className="border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white"
             >
               <Phone className="w-4 h-4 mr-2" />
               Ligar
             </Button>
             <Button
               onClick={handleWhatsAppClick}
-              className="bg-gradient-brand hover:opacity-90 text-white shadow-md hover:shadow-lg transition-all duration-200"
+              className="bg-gradient-to-r from-brand-primary to-brand-secondary hover:from-brand-primary-700 hover:to-brand-secondary-700 text-white"
             >
               <MessageCircle className="w-4 h-4 mr-2" />
               WhatsApp
@@ -98,7 +98,6 @@ export default function SiteHeader({ variant = 'default', sticky = true }: SiteH
               size="sm"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
-              className="hover:bg-brand-primary/5"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </Button>
@@ -107,13 +106,13 @@ export default function SiteHeader({ variant = 'default', sticky = true }: SiteH
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden border-t border-gray-200 bg-surface-0">
+          <div className="lg:hidden border-t border-gray-200 bg-white">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navigation.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block px-3 py-2 text-muted-foreground hover:text-brand-primary hover:bg-brand-primary/5 rounded-md transition-colors min-h-[44px] flex items-center"
+                  className="block px-3 py-2 text-muted-foreground hover:text-brand-primary hover:bg-brand-primary-50 rounded-md transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -123,14 +122,14 @@ export default function SiteHeader({ variant = 'default', sticky = true }: SiteH
                 <Button
                   variant="outline"
                   onClick={handleCallClick}
-                  className="w-full border-brand-primary/20 text-brand-primary hover:bg-brand-primary/5 hover:border-brand-primary/30 min-h-[44px]"
+                  className="w-full border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white"
                 >
                   <Phone className="w-4 h-4 mr-2" />
                   Ligar
                 </Button>
                 <Button
                   onClick={handleWhatsAppClick}
-                  className="w-full bg-gradient-brand hover:opacity-90 text-white min-h-[44px]"
+                  className="w-full bg-gradient-to-r from-brand-primary to-brand-secondary hover:from-brand-primary-700 hover:to-brand-secondary-700 text-white"
                 >
                   <MessageCircle className="w-4 h-4 mr-2" />
                   WhatsApp

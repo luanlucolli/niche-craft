@@ -16,9 +16,9 @@ interface Case {
 interface CaseCardsProps {
   variant?: 'cards' | 'list';
   separator?: 'none' | 'wave' | 'curve' | 'diagonal';
-  tone?: 'surface-0' | 'surface-1' | 'surface-2' | 'gradient-soft';
-  pattern?: 'none' | 'dots' | 'grid';
-  separatorColor?: 'auto' | 'primary' | 'secondary' | 'muted';
+  tone?: 'soft' | 'solid';
+  accent?: 'primary' | 'secondary';
+  separatorColor?: 'primary' | 'secondary' | 'muted';
   title: string;
   subtitle?: string;
   cases: Case[];
@@ -27,9 +27,9 @@ interface CaseCardsProps {
 
 export default function CaseCards({
   variant = 'cards',
-  separator = 'diagonal',
-  tone = 'surface-2',
-  pattern = 'none',
+  separator = 'none',
+  tone = 'soft',
+  accent = 'primary',
   separatorColor = 'primary',
   title,
   subtitle,
@@ -39,8 +39,9 @@ export default function CaseCards({
   return (
     <Section 
       separator={separator}
+      background="default"
       tone={tone}
-      pattern={pattern}
+      accent={accent}
       separatorColor={separatorColor}
       paddingY="lg"
     >
@@ -57,18 +58,23 @@ export default function CaseCards({
       
       <div className={cn(
         'grid gap-8 max-w-6xl mx-auto',
-        variant === 'cards' && 'sm:grid-cols-2 lg:grid-cols-3',
+        variant === 'cards' && 'md:grid-cols-2 lg:grid-cols-3',
         variant === 'list' && 'max-w-4xl space-y-8'
       )}>
         {cases.map((caseItem, index) => (
           <div
             key={index}
-            className="card-feature group"
+            className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 animate-fade-in-up group"
             style={{ animationDelay: `${index * 0.1}s` }}
           >
             {/* Header */}
             <div className="flex items-center justify-between mb-4">
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-brand-primary/10 to-brand-secondary/10 text-brand-primary border border-brand-primary/20">
+              <span className={cn(
+                "inline-flex items-center px-3 py-1 rounded-full text-sm font-medium",
+                accent === 'primary'
+                  ? 'bg-brand-primary-100 text-brand-primary-700'
+                  : 'bg-brand-secondary-100 text-brand-secondary-700'
+              )}>
                 {caseItem.segmento}
               </span>
               
@@ -94,7 +100,10 @@ export default function CaseCards({
             
             {/* Intervenção */}
             <div className="mb-4">
-              <h4 className="font-semibold mb-2 text-sm text-brand-primary">
+              <h4 className={cn(
+                "font-semibold mb-2 text-sm",
+                accent === 'primary' ? 'text-brand-primary-600' : 'text-brand-secondary-600'
+              )}>
                 O QUE FIZEMOS
               </h4>
               <p className="text-muted-foreground text-sm leading-relaxed">
@@ -108,7 +117,7 @@ export default function CaseCards({
                 <TrendingUp className="w-4 h-4" />
                 RESULTADO
               </h4>
-              <p className="text-ink font-medium text-sm leading-relaxed">
+              <p className="text-foreground font-medium text-sm leading-relaxed">
                 {caseItem.resultado}
               </p>
             </div>

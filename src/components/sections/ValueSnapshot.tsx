@@ -14,9 +14,9 @@ interface KPI {
 interface ValueSnapshotProps {
   variant?: 'grid' | 'row';
   separator?: 'none' | 'wave' | 'curve' | 'diagonal';
-  tone?: 'surface-0' | 'surface-1' | 'surface-2' | 'gradient-soft';
-  pattern?: 'none' | 'dots' | 'grid';
-  separatorColor?: 'auto' | 'primary' | 'secondary' | 'muted';
+  tone?: 'soft' | 'solid';
+  accent?: 'primary' | 'secondary';
+  separatorColor?: 'primary' | 'secondary' | 'muted';
   title: string;
   subtitle?: string;
   kpis: KPI[];
@@ -31,9 +31,9 @@ const getKPIIcon = (index: number) => {
 export default function ValueSnapshot({
   variant = 'grid',
   separator = 'none',
-  tone = 'surface-1',
-  pattern = 'none',
-  separatorColor = 'auto',
+  tone = 'soft',
+  accent = 'primary',
+  separatorColor = 'primary',
   title,
   subtitle,
   kpis,
@@ -42,8 +42,9 @@ export default function ValueSnapshot({
   return (
     <Section 
       separator={separator}
+      background="muted"
       tone={tone}
-      pattern={pattern}
+      accent={accent}
       separatorColor={separatorColor}
       paddingY="lg"
     >
@@ -60,8 +61,8 @@ export default function ValueSnapshot({
       
       <div className={cn(
         'grid gap-6 max-w-5xl mx-auto mb-8',
-        variant === 'grid' && 'sm:grid-cols-2 lg:grid-cols-4',
-        variant === 'row' && 'sm:grid-cols-2 lg:grid-cols-3'
+        variant === 'grid' && 'md:grid-cols-2 lg:grid-cols-4',
+        variant === 'row' && 'md:grid-cols-2 lg:grid-cols-3'
       )}>
         {kpis.map((kpi, index) => {
           const IconComponent = getKPIIcon(index);
@@ -69,12 +70,17 @@ export default function ValueSnapshot({
           return (
             <div
               key={index}
-              className="card-feature group"
+              className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 animate-fade-in-up group"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-primary/10 to-brand-secondary/10 flex items-center justify-center group-hover:from-brand-primary group-hover:to-brand-secondary group-hover:text-white transition-all duration-300">
-                  <IconComponent className="w-6 h-6 text-brand-primary group-hover:text-white transition-colors" />
+                <div className={cn(
+                  "w-12 h-12 rounded-xl flex items-center justify-center group-hover:text-white transition-all duration-300",
+                  accent === 'primary'
+                    ? 'bg-brand-primary-100 group-hover:bg-brand-primary-500'
+                    : 'bg-brand-secondary-100 group-hover:bg-brand-secondary-500'
+                )}>
+                  <IconComponent className="w-6 h-6" />
                 </div>
                 
                 {kpi.mode === 'estimated' && (
@@ -84,7 +90,12 @@ export default function ValueSnapshot({
                 )}
               </div>
               
-              <div className="text-3xl font-bold mb-1 text-ink group-hover:text-brand-primary transition-colors">
+              <div className={cn(
+                "text-3xl font-bold mb-1 transition-colors",
+                accent === 'primary'
+                  ? 'text-foreground group-hover:text-brand-primary-600'
+                  : 'text-foreground group-hover:text-brand-secondary-600'
+              )}>
                 {kpi.value}
               </div>
               
@@ -104,7 +115,7 @@ export default function ValueSnapshot({
       
       {note && (
         <div className="text-center max-w-3xl mx-auto">
-          <p className="text-sm text-muted-foreground bg-surface-0/60 rounded-lg p-4 border border-gray-200">
+          <p className="text-sm text-muted-foreground bg-white/60 rounded-lg p-4 border border-gray-200">
             💡 {note}
           </p>
         </div>
