@@ -54,26 +54,40 @@ export default function Section({
           'bg-brand-secondary-50/30': background === 'default' && tone === 'soft' && accent === 'secondary',
           'bg-brand-primary-500 text-white': background === 'default' && tone === 'solid' && accent === 'primary',
           'bg-brand-secondary-500 text-white': background === 'default' && tone === 'solid' && accent === 'secondary',
-          
-          // Separators with color support
-          'separator-wave': separator === 'wave',
-          'separator-curve': separator === 'curve',
-          'separator-diagonal': separator === 'diagonal',
-          
-          // Separator colors
-          'text-brand-primary-500': separatorColor === 'primary',
-          'text-brand-secondary-500': separatorColor === 'secondary',
-          'text-muted': separatorColor === 'muted',
         },
         className
       )}
-      style={{
-        // Custom CSS for separator colors using currentColor
-        '--separator-color': separatorColor === 'primary' ? 'hsl(var(--brand-primary))' :
-                           separatorColor === 'secondary' ? 'hsl(var(--brand-secondary))' :
-                           'hsl(var(--muted))'
-      } as React.CSSProperties}
     >
+      {/* Separador superior com gradiente */}
+      {separator !== 'none' && (
+        <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
+          <svg
+            className="relative block w-full h-16"
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <defs>
+              <linearGradient id={`gradient-${id || Math.random()}`} x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="hsl(var(--brand-primary))" />
+                <stop offset="100%" stopColor="hsl(var(--brand-secondary))" />
+              </linearGradient>
+            </defs>
+            <path
+              d={
+                separator === 'wave'
+                  ? "M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                  : separator === 'curve'
+                  ? "M0,0V46.29c47.79,22.4,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                  : "M1200 120L0 16.48 0 0 1200 0 1200 120z"
+              }
+              fill={`url(#gradient-${id || Math.random()})`}
+            />
+          </svg>
+        </div>
+      )}
+      
       <Container size={containerSize}>
         {children}
       </Container>

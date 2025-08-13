@@ -5,6 +5,10 @@ import { initAnalytics } from '@/lib/analytics';
 import siteData from '@/content/site.json';
 import homepageData from '@/content/homepage.json';
 
+// Import layout components
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
+
 // Import all section components
 import Hero from '@/components/sections/Hero';
 import Features from '@/components/sections/Features';
@@ -18,7 +22,6 @@ import Pricing from '@/components/sections/Pricing';
 import Testimonials from '@/components/sections/Testimonials';
 import FAQ from '@/components/sections/FAQ';
 import CTA from '@/components/sections/CTA';
-import Footer from '@/components/sections/Footer';
 
 // Component mapping
 const sectionComponents = {
@@ -34,7 +37,6 @@ const sectionComponents = {
   Testimonials,
   FAQ,
   CTA,
-  Footer,
 } as const;
 
 // Type-safe separator validation
@@ -63,29 +65,35 @@ export default function Index() {
   }, []);
 
   return (
-    <main className="min-h-screen">
-      {homepageData.sections.map((section: any, index: number) => {
-        const Component = sectionComponents[section.component as keyof typeof sectionComponents];
-        
-        if (!Component) {
-          console.warn(`Component ${section.component} not found`);
-          return null;
-        }
+    <div className="min-h-screen">
+      <Header />
+      
+      <main>
+        {homepageData.sections.map((section: any, index: number) => {
+          const Component = sectionComponents[section.component as keyof typeof sectionComponents];
+          
+          if (!Component) {
+            console.warn(`Component ${section.component} not found`);
+            return null;
+          }
 
-        // Validate and provide fallback for separator
-        const separator = section.separator && isValidSeparator(section.separator) 
-          ? section.separator 
-          : 'none';
+          // Validate and provide fallback for separator
+          const separator = section.separator && isValidSeparator(section.separator) 
+            ? section.separator 
+            : 'none';
 
-        return (
-          <Component
-            key={index}
-            variant={section.variant}
-            separator={separator}
-            {...section.props}
-          />
-        );
-      })}
-    </main>
+          return (
+            <Component
+              key={index}
+              variant={section.variant}
+              separator={separator}
+              {...section.props}
+            />
+          );
+        })}
+      </main>
+      
+      <Footer />
+    </div>
   );
 }
