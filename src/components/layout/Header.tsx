@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Menu, X, Phone, MessageCircle } from 'lucide-react';
+import { Menu, X, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Container from '@/components/ui/Container';
 import siteData from '@/content/site.json';
@@ -31,30 +31,26 @@ export default function Header({ variant = 'default', sticky = true }: HeaderPro
     window.open(whatsappUrl, '_blank');
   };
 
-  const handleCallClick = () => {
-    window.open(`tel:${siteData.contact.phone}`, '_self');
-    metrics.phoneClick('header');
-  };
-
   return (
     <header 
       className={`w-full z-50 transition-all duration-300 ${
         sticky ? 'sticky top-0' : 'relative'
-      } ${
-        variant === 'transparent' ? 'bg-white/95 backdrop-blur-sm border-b border-white/20' :
-        variant === 'solid' ? 'bg-white border-b border-gray-200 shadow-sm' :
-        'bg-white/98 backdrop-blur-md border-b border-gray-100'
-      }`}
+      } bg-white border-b border-gray-200 shadow-sm`}
     >
       <Container>
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-brand-primary to-brand-secondary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">LP</span>
+            <a href="/" className="flex items-center space-x-3">
+              <img 
+                src="/lovable-uploads/6b86929d-6de2-4d48-9fdb-724d81a21539.png" 
+                alt="LandingVille Logo" 
+                className="h-10 w-auto"
+              />
+              <div className="text-2xl">
+                <span className="font-bold text-[#333]">landing</span>
+                <span className="font-medium text-[#5e9e4c]">ville</span>
               </div>
-              <span className="text-xl font-bold text-foreground">{siteData.title}</span>
             </a>
           </div>
 
@@ -64,27 +60,18 @@ export default function Header({ variant = 'default', sticky = true }: HeaderPro
               <a
                 key={item.name}
                 href={item.href}
-                className="text-muted-foreground hover:text-brand-primary transition-colors duration-200 font-medium"
+                className="text-gray-600 hover:text-[#5e9e4c] transition-colors duration-200 font-medium"
               >
                 {item.name}
               </a>
             ))}
           </nav>
 
-          {/* Desktop CTA Buttons */}
-          <div className="hidden lg:flex items-center space-x-3">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={handleCallClick}
-              className="border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white"
-            >
-              <Phone className="w-4 h-4 mr-2" />
-              Ligar
-            </Button>
+          {/* Desktop CTA Button */}
+          <div className="hidden lg:flex items-center">
             <Button
               onClick={handleWhatsAppClick}
-              className="bg-gradient-to-r from-brand-primary to-brand-secondary hover:from-brand-primary-700 hover:to-brand-secondary-700 text-white"
+              className="bg-green-500 hover:bg-green-600 text-white"
             >
               <MessageCircle className="w-4 h-4 mr-2" />
               WhatsApp
@@ -112,24 +99,16 @@ export default function Header({ variant = 'default', sticky = true }: HeaderPro
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block px-3 py-2 text-muted-foreground hover:text-brand-primary hover:bg-brand-primary-50 rounded-md transition-colors"
+                  className="block px-3 py-2 text-gray-600 hover:text-[#5e9e4c] hover:bg-gray-50 rounded-md transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </a>
               ))}
-              <div className="flex flex-col space-y-2 pt-4 border-t border-gray-200 mt-4">
-                <Button
-                  variant="outline"
-                  onClick={handleCallClick}
-                  className="w-full border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white"
-                >
-                  <Phone className="w-4 h-4 mr-2" />
-                  Ligar
-                </Button>
+              <div className="pt-4 border-t border-gray-200 mt-4">
                 <Button
                   onClick={handleWhatsAppClick}
-                  className="w-full bg-gradient-to-r from-brand-primary to-brand-secondary hover:from-brand-primary-700 hover:to-brand-secondary-700 text-white"
+                  className="w-full bg-green-500 hover:bg-green-600 text-white"
                 >
                   <MessageCircle className="w-4 h-4 mr-2" />
                   WhatsApp
